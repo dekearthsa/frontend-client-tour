@@ -5,7 +5,7 @@ import ComponentFindBar from "./ComponentFindBar"
 const ComponentTitleHome = () => {
     return (
         <>
-            <div className="h-[100vh]" style={{backgroundImage: `url(${imgHeader})`}}>
+            <div className="h-[70vh]" style={{backgroundImage: `url(${imgHeader})`}}>
                 <ComponentHomeNavbar/>
                 <div className="flex justify-end">
                     <ComponentFindBar/>

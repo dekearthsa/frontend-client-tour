@@ -10,9 +10,9 @@ function App() {
       <NavBar/>
       <BrowserRouter>
         <Routes>
-
           <Route path="/" element={<HomePage/>}/>
           <Route path="/shop" element={<ShopPage/>}/>
+          {/* <Route></Route> */}
         </Routes>
       </BrowserRouter>
     </div>

@@ -5,7 +5,7 @@ const ComponentPopularFeature = () => {
             <div>
                 <div className="text-gray-400 text-[18px]">Feature</div>
             </div>
-            <div className="mt-5 text-[32px]">
+            <div className="text-[32px] font-bold">
                 <div>Popular Destinations</div>
             </div>
             <div className="grid grid-cols-4 space-x-5 mt-10 mb-10">

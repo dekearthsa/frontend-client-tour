@@ -1,4 +1,5 @@
 import imgHeader from "../../img/CA_ChiangMai_TH_Header.webp"
+import {Link} from "react-router-dom";
 
 const ComponentNavbarTour = () => {
     return (
@@ -17,7 +18,9 @@ const ComponentNavbarTour = () => {
                         </div>
                     </div>
                     <div>
-                        <button className="bg-red-400 text-white font-bold w-[150px] h-[40px] rounded-lg mt-10">SHOW TOUR</button>
+                        <Link to="/shop">
+                            <button className="bg-red-400 text-white font-bold w-[150px] h-[40px] rounded-lg mt-10">SHOW TOUR</button>
+                        </Link>
                     </div>
                 </div>
             </div>
