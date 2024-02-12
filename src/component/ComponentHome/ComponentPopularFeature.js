@@ -8,7 +8,7 @@ const ComponentPopularFeature = () => {
             <div className="text-[32px] font-bold">
                 <div>Popular Destinations</div>
             </div>
-            <div className="grid grid-cols-4 space-x-5 mt-10 mb-10">
+            <div className="lg:grid lg:grid-cols-4 lg:space-x-5 mt-10 mb-10">
                 <div className="h-[300px] w-[280px] border-[1px] text-center rounded-xl">
                     <div>
                         <img className="rounded-t-xl h-[250px] object-cover" src="https://www.amazingasiatours.com/wp-content/uploads/2023/07/Thailand-floating-market-Damnoen-Saduak-1-scaled-600x348.jpg"/>

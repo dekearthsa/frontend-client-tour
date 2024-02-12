@@ -8,7 +8,7 @@ const ComponentChooseBrand = () => {
                 <div className="text-[32px] font-bold">
                     Reasons to choose Amazing Asia Tours
                 </div>
-                <div className="grid grid-cols-4 space-x-5 mt-10 mb-10 text-center">
+                <div className="lg:grid lg:grid-cols-4 lg:space-x-5 mt-10 mb-10 text-center">
                     <div className="border-[1px] w-[300px] h-[340px] rounded-lg text-center bg-white">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF5959" class="w-[100px] h-[100px] m-auto mt-10">
                             <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" />
@@ -55,9 +55,6 @@ const ComponentChooseBrand = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="text-center">
-                    <button className="bg-red-400 text-white font-bold w-[150px] h-[40px] rounded-lg mt-10">MORE REASONS</button>
-                </div> */}
             </div>
         </>
     )

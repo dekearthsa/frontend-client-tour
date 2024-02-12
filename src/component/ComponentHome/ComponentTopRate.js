@@ -6,10 +6,10 @@ const ComponentTopRate = () => {
             <div className="p-10 w-[90%] m-auto ">
                 <div className="text-gray-500 text-[18px]">Special Offers</div>
                 <div className="text-[32px] font-bold">Top Rated Tours</div>
-                <div className="flex justify-around mt-10">
+                <div className="lg:flex lg:justify-around mt-10">
                     <div className="c-card border-[1px] w-[400px] h-[500px] rounded-2xl">
                         <div className="c-image">
-                            <img className="w-[400px] h-[250px] object-cover rounded-t-2xl" src="https://www.amazingasiatours.com/wp-content/uploads/2023/07/Thailand-Khao-Sok-per-longtailboot.jpg" />
+                            <img className="lg:w-[400px] h-[250px] object-cover rounded-t-2xl" src="https://www.amazingasiatours.com/wp-content/uploads/2023/07/Thailand-Khao-Sok-per-longtailboot.jpg" />
                         </div>
                         <div className="c-detail ml-5">
                             <div className="text-gray-500 text-[18px] mt-5">Multi-day tour</div>
@@ -39,7 +39,7 @@ const ComponentTopRate = () => {
                     </div>
                     <div className="c-card border-[1px] w-[400px] h-[500px] rounded-2xl">
                         <div className="c-image">
-                        <img className="w-[400px] h-[250px] object-cover rounded-t-2xl" src="https://www.amazingasiatours.com/wp-content/uploads/2023/07/Thailand-Bangkok-Wat-Pho-1.jpg" />
+                        <img className="lg:w-[400px] h-[250px] object-cover rounded-t-2xl" src="https://www.amazingasiatours.com/wp-content/uploads/2023/07/Thailand-Bangkok-Wat-Pho-1.jpg" />
                         </div>
                         <div className="c-detail ml-5">
                             <div className="text-gray-500 text-[18px] mt-5">Multi-day tour</div>
@@ -69,7 +69,7 @@ const ComponentTopRate = () => {
                     </div>
                     <div className="c-card border-[1px] w-[400px] h-[500px] rounded-2xl">
                         <div className="c-image">
-                        <img className="w-[400px] h-[250px] object-cover rounded-t-2xl" src="https://www.amazingasiatours.com/wp-content/uploads/2023/08/thailand-lopburi-0.jpg" />
+                        <img className="lg:w-[400px] h-[250px] object-cover rounded-t-2xl" src="https://www.amazingasiatours.com/wp-content/uploads/2023/08/thailand-lopburi-0.jpg" />
                         </div>
                         <div className="c-detail ml-5">
                             <div className="text-gray-500 text-[18px] mt-5">Multi-day tour</div>
