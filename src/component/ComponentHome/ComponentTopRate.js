@@ -98,13 +98,13 @@ const ComponentTopRate = () => {
                         </div>
                     </div>
                 </div>
-                <div className="m-auto text-center mt-10 ">
+                {/* <div className="m-auto text-center mt-10 ">
                     <Link to="/shop">
                         <div className="w-[200px] h-[40px] m-auto bg-red-400 rounded-lg">
                                 <button className="mt-2 text-white font-bold">More detail</button>
                         </div>
                     </Link>
-                </div>
+                </div> */}
                 <div className="mb-10"></div>
             </div>
         </>

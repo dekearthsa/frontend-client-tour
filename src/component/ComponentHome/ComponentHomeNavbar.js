@@ -1,7 +1,7 @@
 const ComponentHomeNavbar = () => {
     return(   
     <>
-    <div className="flex justify-between pt-10 text-white font-bold">
+    <div className="w-[100%] flex justify-between pt-10 text-white font-bold absolute">
         <div>
             <div className="ml-[200px]">LOGO</div>
         </div>

@@ -1,12 +1,12 @@
 import imgHeader from "../../img/CA_ChiangMai_TH_Header.webp"
-import ComponentHomeNavbar from "./ComponentHomeNavbar"
+// import ComponentHomeNavbar from "./ComponentHomeNavbar"
 import ComponentFindBar from "./ComponentFindBar"
 
 const ComponentTitleHome = () => {
     return (
         <>
             <div className="h-[70vh]" style={{backgroundImage: `url(${imgHeader})`}}>
-                <ComponentHomeNavbar/>
+                {/* <ComponentHomeNavbar/> */}
                 <div className="flex justify-end">
                     <ComponentFindBar/>
                 </div>
