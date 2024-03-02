@@ -5,8 +5,42 @@ body{
     padding: 0px;
     font-family: 'Roboto', sans-serif;
 }
+.loader {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    clip-path: inset(0 3ch 0 0);
+    animation: l4 1s steps(4) infinite;
+  }
+  .loader:before {
+    content:"Loading..."
+  }
+  @keyframes l4 {to{clip-path: inset(0 -1ch 0 0)}}
 
 
+.set-img{
+    width: 350px; 
+    height:200px; 
+    object-fit: cover;
+    object-position: 25% 25%; 
+}
+.set-card-image{
+  width: 550px; 
+  height:400px; 
+  object-fit: cover;
+  object-position: 10% 10%; 
+}
+
+.set-scroll{
+  overflow-y: auto;
+  min-height: 180px;
+  max-height: 180px;
+}
+
+.set-shadow{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
 /* .input-value{
     display: flex;
 } */

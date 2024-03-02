@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import imgHeader from "../../img/CA_ChiangMai_TH_Header.webp"
 // import TestImage from '../../img/Phuket_Island.jpg'
-import axios from 'axios'
+// import axios from 'axios'
 import ComponentShopPopUp from "../ComponentShop/ComponentShopPopUp"
 
 const ComponentTitleShop = () => {
@@ -100,17 +100,6 @@ const ComponentTitleShop = () => {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
                 </svg>
             </div>
-            {/* <div className='border-[1px] border-zinc-400 w-[300px] h-[450px] ml-5 mr-5 rounded-lg overflow-y-auto'>
-                <div className='w-[100%] h-[250px]'>
-                    <img src={TestImage}  className='object-center object-cover w-[100%] h-[250px]'/>
-                </div>
-                <div className='ml-2 mr-2 mt-1 text-center font-bold'>
-                    Phuket
-                </div>
-                <div className='ml-2 mr-2'>
-
-                </div>
-            </div> */}
         </div>
         </>
     )

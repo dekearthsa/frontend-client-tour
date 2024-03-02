@@ -4,14 +4,18 @@ import ComponentPopularFeature from "../component/ComponentHome/ComponentPopular
 import ComponentNavbarTour from "../component/ComponentHome/ComponentNavbarTour"
 import ComponentChooseBrand from "../component/ComponentHome/ComponentChooseBrand"
 import ComponentTopRate from "../component/ComponentHome/ComponentTopRate"
+// import ComponentBottonBar from "../component/ComponentHome/ComponentBottonBar"
 // import ComponentTest from "../component/ComponentTest/ComponentTest"
 // import MultiImageStream from "../component/ComponentTest/MultiImageStream"
 // import ComponentTestUploadContent from "../component/ComponentTest/ComponentTestUploadContent"
+import NavBar from '../component/Navbar/NavBar';
+import ComponentBottonBar from '../component/ComponentHome/ComponentBottonBar';
 
 const HomePage = () => {
 
     return(
         <>  
+            <NavBar/>
             <ComponentTitleHome/>
             <ComponentPopularFeature/>
             <ComponentNavbarTour/>
@@ -19,9 +23,11 @@ const HomePage = () => {
                 <ComponentChooseBrand />
             </div>
             <ComponentTopRate/>
+            {/* <ComponentBottonBar/> */}
             {/* <ComponentTest/> */}
             {/* <MultiImageStream/> */}
             {/* <ComponentTestUploadContent/> */}
+            <ComponentBottonBar/>
         </>
     )
 }
