@@ -4,7 +4,7 @@ import NavBar from '../component/Navbar/NavBar';
 import ComponentBottonBar from '../component/ComponentHome/ComponentBottonBar';
 // import ComponentTitleHome from '../component/ComponentHome/ComponentTitleHome';
 
-const ProductDetail = (props) => {
+const ProductDetail = () => {
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -93,9 +93,9 @@ const ProductDetail = (props) => {
                                         <div className='grid grid-cols-4 mt-3'>
                                             <div>
                                                 <span className='mr-2'>Persons</span> 
-                                                <span className='mr-10'>{el.people}</span>
+                                                <span className='mr-10'>{el.price}</span>
                                                 <span className='mr-2'>Price</span>
-                                                <span>฿{el.price}</span>
+                                                <span>฿{el.people}</span>
                                             </div>
                                         </div>
                                     </div>

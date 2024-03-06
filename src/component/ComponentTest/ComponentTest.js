@@ -12,6 +12,7 @@ const ImageDisplay = () => {
             const binImgData = await axios.get("https://test-fetct-img-cloud-store-zt27agut7a-as.a.run.app/api/get/img");
             console.log(binImgData.data)
             setImageBuffers(binImgData.data)
+            console.log(imageBuffers)
         }catch(err){
             console.log(err)
         }

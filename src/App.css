@@ -32,6 +32,13 @@ body{
   object-position: 10% 10%; 
 }
 
+.set-card-popular-image{
+  width: 280px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 10% 10%; 
+}
+
 .set-scroll{
   overflow-y: auto;
   min-height: 180px;

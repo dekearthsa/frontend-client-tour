@@ -75,8 +75,6 @@ const ShopPage =  () => {
             if(product.status === 200){
                 setIsLoading(false)
                 setProductData(product.data)
-                // console.log(product.data)
-                // console.log("--_>",product)
             }else{
                 console.log("err 500")
                 setIsLoading(false)

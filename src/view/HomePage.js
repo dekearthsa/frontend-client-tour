@@ -23,11 +23,8 @@ const HomePage = () => {
                 <ComponentChooseBrand />
             </div>
             <ComponentTopRate/>
-            {/* <ComponentBottonBar/> */}
-            {/* <ComponentTest/> */}
-            {/* <MultiImageStream/> */}
-            {/* <ComponentTestUploadContent/> */}
             <ComponentBottonBar/>
+            {/* <ComponentTest/> */}
         </>
     )
 }

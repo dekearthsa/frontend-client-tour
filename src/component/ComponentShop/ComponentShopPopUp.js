@@ -19,6 +19,7 @@ const ComponentShopPopUp = () => {
     const [isPrice, setIsPrice] = useState("");
     const [isPerson, setIsPerson] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isOrder, setIsOrder] = useState("");
     // const [isBr, setIsBr] = useState();
 
     const haddleTitle = () => {
@@ -100,6 +101,14 @@ const ComponentShopPopUp = () => {
         setArrayActive([...arrayActive])
     }
 
+    const haddleOrderNumber = (e) => {
+        if(e < 0){
+            alert("Order can't below than 0")
+        }else{
+            setIsOrder(e)
+        }
+    }
+
     const haddleSubmitUploadContent = async (e) => {
         // e.preventDefault();
         setIsLoading(true);
@@ -113,11 +122,12 @@ const ComponentShopPopUp = () => {
             setArrayPrice.push(setJSONPrice)
         }
 
-        if(region === "" && title === "" && introduction === "" && arrayActive.length === 0 && setArrayPrice.length === 0){
+        if(region === "" && title === "" && introduction === "" && arrayActive.length === 0 && setArrayPrice.length === 0 && isOrder === ""){
             alert("Region, title, introduction, activity, perice per person cannot be null");
         }else{
             const setJSON = {
                 region: region,
+                order: isOrder,
                 title: title,
                 intro: introduction,
                 content: arrayActive,
@@ -166,24 +176,8 @@ const ComponentShopPopUp = () => {
                 console.log(err)
                 setIsLoading(false);
                 alert(err)
-                setTitle("");
-                setIsTitle("");
-                setImages([]);
-                setFiles();
-                setArrayActive([]);
-                setIsActiveDay("");
-                setIsActiveContent("");
-                setIntroduction("");
-                setIsIntroduction("");
-                setArrayPrice([]);
-                setArrayPeron([]);
-                setIsPrice("");
-                setIsPerson("");
-                
             }
         }
-        
-
     }
 
     return (
@@ -191,7 +185,7 @@ const ComponentShopPopUp = () => {
             {
                 !isLoading && (
                     <div>
-                        <div className='font-bold flex'>
+                        <div className='font-bold flex '>
                             <div>Select Region: </div>
                             <div>
                                 <select onChange={(e)=> setRegion(e.target.value)} name="region" id="region" className='border-b-[1px] border-zinc-500'>
@@ -205,6 +199,12 @@ const ComponentShopPopUp = () => {
                                 </select>
                             </div>
                         </div>
+                        <div className='border-b-[1px] border-zinc-200 mt-3 mb-3'></div>
+                        <div className='flex'>
+                            <div className='font-bold'>Popular Place order</div>
+                            <input className='border-b-[1px] border-zinc-500' type='number' onChange={(e) => haddleOrderNumber(e.target.value)}/>
+                        </div>
+                        <div className='border-b-[1px] border-zinc-200 mt-3 mb-3'></div>
                         <div className='mt-5 mb-5 font-bold'>Title product: {title}</div>
                     <div className="flex">
                         <div className="">Title product:</div>
