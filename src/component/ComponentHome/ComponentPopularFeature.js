@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from "axios"
 
 const ComponentPopularFeature =   () => {
@@ -42,14 +43,22 @@ const ComponentPopularFeature =   () => {
             {
                 dataPop.map((el, idx) => (
                     <div key={idx}>
-                        <div className="h-[300px] w-[280px] border-[1px] border-zinc-300 text-center rounded-xl ">
-                            <div>
-                                <img className="rounded-t-xl  set-card-popular-image" src={`https://test-fetct-img-cloud-store-zt27agut7a-as.a.run.app/api/get/img/stream/${el.images[0]}`}/>
+                        <Link
+                            to={{
+                                pathname: `product/:${el.title}`,
+                                search: `?region=${encodeURIComponent(el.region)}&title=${encodeURIComponent(el.title)}&intro=${encodeURIComponent(el.intro)}&price=${encodeURIComponent(el.price)}&img=${encodeURIComponent(el.images)}&content=${encodeURIComponent(JSON.stringify(el.content))}`
+                            }}
+                        >
+                            <div className="h-[300px] w-[280px] border-[1px] border-zinc-300 text-center rounded-xl ">
+                                <div>
+                                    <img className="rounded-t-xl  set-card-popular-image" src={`https://test-fetct-img-cloud-store-zt27agut7a-as.a.run.app/api/get/img/stream/${el.images[0]}`}/>
+                                </div>
+                                <div className="mt-3 font-bold">
+                                    <div>{el.title}</div>
+                                </div>
                             </div>
-                            <div className="mt-3 font-bold">
-                                <div>{el.title}</div>
-                            </div>
-                        </div>
+                        </Link>
+                        
                     </div>
                     ))
             }
