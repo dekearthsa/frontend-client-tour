@@ -20,6 +20,7 @@ const ComponentShopPopUp = () => {
     const [isPerson, setIsPerson] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isOrder, setIsOrder] = useState("");
+    const [isRate, setIsRate] = useState(0);
     // const [isBr, setIsBr] = useState();
 
     const haddleTitle = () => {
@@ -96,6 +97,15 @@ const ComponentShopPopUp = () => {
         }
     }
 
+    // const haddleTopRate = () => {
+    //     if(isRate > 5 || isRate < 0){
+    //         alert("Top rate must around 0-5")
+    //         setIsRate(0)
+    //     }else{
+
+    //     }
+    // }
+
     const haddleRemoveActivity = () => {
         arrayActive.pop();
         setArrayActive([...arrayActive])
@@ -127,6 +137,7 @@ const ComponentShopPopUp = () => {
         }else{
             const setJSON = {
                 region: region,
+                topRate: isRate,
                 order: isOrder,
                 title: title,
                 intro: introduction,
@@ -214,6 +225,33 @@ const ComponentShopPopUp = () => {
                         <span className='ml-5 text-[13px]'>
                             <button className='border-[1px] border-zinc-500 w-[80px] font-bold bg-zinc-500 rounded-md text-white' onClick={haddleTitle}>Submit</button>
                         </span>
+                    </div>
+                    <div className='border-b-[1px] border-zinc-200 mt-3 mb-3'></div>
+                    <div>
+                        <div className='flex mb-3'>
+                            <div className='font-bold mr-3'>TopRate</div>
+                            <div>{isRate}</div>
+                        </div>
+                        <div  className='flex'>
+                            <div className='font-bold mr-3'>TopRate</div>
+                            <div className='flex'>
+                                <div>
+                                    <input className='border-b-[1px] border-zinc-400 ' type='number' value={isRate} onChange={(e) => {
+                                            if(e.target.value < 0 || e.target.value > 5){
+                                                alert("Range toprate must between 0-5.")
+                                                setIsRate(0)
+                                            }else{
+                                                setIsRate(e.target.value)
+                                            }
+                                        }}/>
+                                </div>
+                                <div className='ml-3'> 
+                                    {/* <button className='border-[1px] border-zinc-500 w-[100px] font-bold bg-zinc-500 rounded-md text-white text-[13px]'
+                                    onClick={haddleTopRate()}
+                                    >Create Rate</button> */}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className='mt-5'>
                         <hr/>

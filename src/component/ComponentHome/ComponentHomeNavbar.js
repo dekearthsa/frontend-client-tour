@@ -8,6 +8,10 @@ const ComponentHomeNavbar = () => {
     //     navigate("/contract")
     // }
 
+    const haddleAboutPage = () => {
+        navigate("/about")
+    }
+
     const haddleShopPage = () => {
         navigate("/shop")
     }
@@ -34,7 +38,8 @@ const ComponentHomeNavbar = () => {
                 <button onClick={haddleShopPage}>Tour</button>
             </div>
             <div>
-                <button>About</button>
+                
+                <button onClick={haddleAboutPage}>About</button>
             </div>
             <div> 
                 <a href='#c-bottom-bar'>

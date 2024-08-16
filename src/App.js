@@ -6,6 +6,7 @@ import ShopPage from './view/ShopPage';
 import ContractPage from './view/ContactPage';
 // import ComponentBottonBar from './component/ComponentHome/ComponentBottonBar';
 import ProductDetail from './view/ProductDetail';
+import AboutPage from './view/AboutPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/shop" element={<ShopPage/>}/>
           <Route path="/contract" element={<ContractPage/>}/>
+          <Route path="/about" element={<AboutPage/>}></Route>
           <Route path="/product/:name" element={<ProductDetail/>}/>
         </Routes>
         {/* <ComponentBottonBar/> */}

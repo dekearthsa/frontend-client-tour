@@ -1,26 +1,131 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ComponentStarToprate from "./ComponentStarToprate"
 import axios from "axios"
+
+
 
 const ComponentPopularFeature =   () => {
     const [dataPop,  setDataPop] = useState([]);
-    const haddleGetDataPopular = async  () => {
-        try{
-            const isData = await axios.get("https://test-node-fetch-popular-zt27agut7a-as.a.run.app/api/popular");
-            if(isData.status === 200){
-                setDataPop(isData.data);
-                
-            }else{
-                alert(isData.status)
-            }
-        }catch(err){
-            console.log(err)
-        }
+    const [isPopData, setIsPopData] = useState([]);
+    const demoPop = [
+        {
+            images: '["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test1",
+            region: "north",
+            ord: 5,
+            rate: 5,
+            intro: "1111",
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test2",
+            region: "north",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test3",
+            region: "north",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test4",
+            region: "north",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test5",
+            region: "north",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test6",
+            region: "north",
+            intro: "22222",
+            ord: 4,
+            rate: 4,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+    ]
 
+    const funcRandomPopular = async (data) => {
+        let setData = data;
+        let lengthData = data.length;
+        const dupIdx = [];
+        const setDataPop = [];
+        // console.log(lengthData)
+        try{
+            for (let i = 0; i < 4; i++) {
+                while (true){
+                    const rndIdx = Math.floor(Math.random() * lengthData);
+                    if(!dupIdx.includes(rndIdx)){
+                        dupIdx.push(rndIdx)
+                        setDataPop.push(setData[rndIdx])
+                        break
+                    }
+                }
+            }
+            return setDataPop
+        }catch(err){
+            return setDataPop
+        }
     }
-    
+
+    const haddleGetDataPopular = async () => {
+        const setArrayPop = []
+        //try{
+        //  const isData = await axios.get("https://test-node-fetch-popular-zt27agut7a-as.a.run.app/api/popular");
+        //  if(isData.status === 200){
+        //      setDataPop(isData.data);
+        //      for(let i = 0; i < dataPop.length; i++) {
+        //          if(dataPop[i].ord === 5){
+        //          setArrayPop.push(dataPop[i])
+        //      }   
+        //   }
+        // const dataPopRnd = await funcRandomPopular(setArrayPop);
+        // setIsPopData(dataPopRnd)
+        //  }else{
+        //      alert(isData.status)
+        //  }
+        //}catch(err){
+        //  console.log(err)
+        //}
+        // 
+
+        for(let i = 0; i < demoPop.length; i++) {
+            if(demoPop[i].ord === 5){
+                setArrayPop.push(demoPop[i])
+            }   
+        }
+        const dataPopRnd = await funcRandomPopular(setArrayPop);
+        setIsPopData(dataPopRnd)
+    }
+
     useEffect(() => {
-        haddleGetDataPopular()
+        haddleGetDataPopular();
     }, []);
     
 
@@ -41,27 +146,55 @@ const ComponentPopularFeature =   () => {
             </div>
             <div className="lg:grid lg:grid-cols-4 lg:space-x-5 mt-10 mb-10">
             {
-                dataPop.map((el, idx) => (
+                // dataPop.map((el, idx) => (
+                //     <div key={idx}>
+                //         <Link
+                //             to={{
+                //                 pathname: `product/:${el.title}`,
+                //                 search: `?region=${encodeURIComponent(el.region)}&title=${encodeURIComponent(el.title)}&intro=${encodeURIComponent(el.intro)}&price=${encodeURIComponent(el.price)}&img=${encodeURIComponent(el.images)}&content=${encodeURIComponent(JSON.stringify(el.content))}`
+                //             }}
+                //         >
+                //             <div className="h-[300px] w-[280px] border-[1px] border-zinc-300 text-center rounded-xl ">
+                //                 <div>
+                //                     <img className="rounded-t-xl  set-card-popular-image" src={`https://test-fetct-img-cloud-store-zt27agut7a-as.a.run.app/api/get/img/stream/${el.images[0]}`}/>
+                //                 </div>
+                //                 <div className="mt-3 font-bold">
+                //                     <div>{el.title}</div>
+                //                 </div>
+                //             </div>
+                //         </Link>
+                //     </div>
+                // ))
+                isPopData.map((el, idx) => (
                     <div key={idx}>
                         <Link
                             to={{
                                 pathname: `product/:${el.title}`,
-                                search: `?region=${encodeURIComponent(el.region)}&title=${encodeURIComponent(el.title)}&intro=${encodeURIComponent(el.intro)}&price=${encodeURIComponent(el.price)}&img=${encodeURIComponent(el.images)}&content=${encodeURIComponent(JSON.stringify(el.content))}`
+                                search: `?region=${encodeURIComponent(el.region)}
+                                &title=${encodeURIComponent(el.title)}
+                                &intro=${encodeURIComponent(el.intro)}
+                                &price=${encodeURIComponent(el.pricePerPerson)}
+                                &img=${encodeURIComponent(el.images)}
+                                &content=${encodeURIComponent(el.content)}
+                                &rate=${encodeURIComponent(el.rate)}`
                             }}
                         >
                             <div className="h-[300px] w-[280px] border-[1px] border-zinc-300 text-center rounded-xl ">
                                 <div>
-                                    <img className="rounded-t-xl  set-card-popular-image" src={`https://test-fetct-img-cloud-store-zt27agut7a-as.a.run.app/api/get/img/stream/${el.images[0]}`}/>
+                                    <img className="rounded-t-xl  set-card-popular-image" src={JSON.parse(el.images)[0] }/>
                                 </div>
                                 <div className="mt-3 font-bold">
                                     <div>{el.title}</div>
                                 </div>
                             </div>
                         </Link>
-                        
                     </div>
-                    ))
+                ))
+
             }
+            {/* <div>
+                {JSON.parse(demoPop[0].images)[0]}
+            </div> */}
             </div>
         </div>
 
