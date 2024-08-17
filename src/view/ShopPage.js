@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import ComponentCardShop from '../component/ComponentShop/ComponentCardShop';
 
 const ShopPage = () => {
     const demoDataListRegion = [
         {
             "reigon": "Northern",
             "data": [
+                "All",
                 "Chiang_Mai",
                 "Chiang_Rai",
                 "Lampang",
@@ -20,6 +22,7 @@ const ShopPage = () => {
         {
             "reigon": "Northeastern",
             "data": [
+                "All",
                 "Amnat_Charoen",
                 "Bueng_Kan",
                 "Buriram",
@@ -45,6 +48,7 @@ const ShopPage = () => {
         {
             "reigon": "Central",
             "data": [
+                "All",
                 "Ang_Thong",
                 "Ayutthaya",
                 "Bangkok",
@@ -67,6 +71,7 @@ const ShopPage = () => {
         {
             "reigon": "Eastern",
             "data": [
+                "All",
                 "Chachoengsao",
                 "Chanthaburi",
                 "Chonburi",
@@ -79,6 +84,7 @@ const ShopPage = () => {
         {
             "reigon": "Western",
             "data": [
+                "All",
                 "Kanchanaburi",
                 "Phetchaburi",
                 "Prachuap_Khiri_Khan",
@@ -89,6 +95,7 @@ const ShopPage = () => {
         {
             "reigon": "Southern",
             "data": [
+                "All",
                 "Chumphon",
                 "Krabi",
                 "Nakhon_Si_Thammarat",
@@ -107,12 +114,152 @@ const ShopPage = () => {
         },
     ];
 
+    const demoProductData =   [
+        {
+            images: '["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test1",
+            province: "Chiang_Mai",
+            region: "Northern",
+            ord: 5,
+            rate: 5,
+            intro: "1111",
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test2",
+            province: "Chiang_Mai",
+            region: "Northern",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test3",
+            province: "Lampang",
+            region: "Northern",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test4",
+            province: "Lampang",
+            region: "Northern",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test5",
+            province: "Lamphun",
+            region: "Northern",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test6",
+            province: "Lamphun",
+            region: "Northern",
+            intro: "22222",
+            ord: 4,
+            rate: 4,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images: '["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test11",
+            province: "Bangkok",
+            region: "Central",
+            ord: 5,
+            rate: 5,
+            intro: "1111",
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test21",
+            province: "Bangkok",
+            region: "Central",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test31",
+            province: "Bangkok",
+            region: "Central",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test41",
+            province: "Ang_Thong",
+            region: "Central",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test51",
+            province: "Ayutthaya",
+            region: "Central",
+            intro: "22222",
+            ord: 5,
+            rate: 5,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+        {
+            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            title: "test61",
+            province: "Ayutthaya",
+            region: "Central",
+            intro: "22222",
+            ord: 4,
+            rate: 4,
+            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
+            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+        },
+    ]
+
     const navigate = useNavigate();
     const [listSelectionRegion, setSelectionRegion] = useState([]);
     const [isListRegion, setListReigon] = useState([]);
+    const [saveListProvince, setSaveListProvince] = useState([]);
     const [listProvince, setListProvince] = useState([]);
     const [isSelectRegion, setSelectRegion] = useState("Northern");
-    const [isProvince, setProvince] = useState("Chiang_Mai");
+    const [isProvince, setProvince] = useState("All");
+    const [isProduct, setProduct] = useState([]);
+    const [isShowProduct, setShowProduct] = useState([]);
+    const [isLoadingProduct, setLoadingProduct] = useState([]);
+
 
     const handleAboutPage = () => {
         navigate("/about");
@@ -149,13 +296,45 @@ const ShopPage = () => {
         return mod3Array;
     };
 
-    // const haddleAddingList = async () => {
-    //     let listRegion = [];
-    // }
-
-    const filterProvince = async (province) => {
-        setProvince(province)
+    const haddleFetchProduct = async () => {
+        setLoadingProduct(true);
+        setProduct(demoProductData);
+        haddleFilterProduct(isSelectRegion, isProvince, demoProductData, false);
+        setLoadingProduct(false);
     }
+
+    
+
+
+    const haddleFilterProduct = async (region, province, productData, switchRegion) => {
+        // console.log(region, province, switchRegion)
+        setLoadingProduct(true);
+        let arrayShowProduct = []
+
+            if(province === "All"){
+                for(let i = 0; i < productData.length; i++){
+                    if (region === productData[i].region){
+                        arrayShowProduct.push(productData[i]);
+                    }
+                }
+                setShowProduct(arrayShowProduct);
+                setLoadingProduct(false);
+            }else{
+                for(let i = 0; i < productData.length; i++){
+                    if (region === productData[i].region && province === productData[i].province){
+                        arrayShowProduct.push(productData[i]);
+                    }
+                }
+                setShowProduct(arrayShowProduct);
+                setLoadingProduct(false);
+            }
+            
+
+    }
+
+    // const filterProvince = async (province) => {
+    //     await setProvince(province);
+    // }
 
     const handleFetchListRegion = async () => {
         const listRegion = await funcMod3("region", demoDataListRegion);
@@ -164,21 +343,29 @@ const ShopPage = () => {
 
     const haddleFetchListProvince = async (regionIn) => {
         let ProvinceList = [];
-        setSelectRegion(regionIn)
+        setSaveListProvince(demoDataListRegion);
+        setSelectRegion(regionIn);
         for (let i = 0; i < demoDataListRegion.length; i++) {
             if (regionIn === demoDataListRegion[i].reigon) {
                 ProvinceList = demoDataListRegion[i].data;
             }
         }
         const list3ModProvince = await funcMod3("province", ProvinceList);
-        setProvince(list3ModProvince[0][0])
         setListProvince(list3ModProvince);
     };
 
-    useEffect(() => {
-        handleFetchListRegion();
-        haddleFetchListProvince("Northern");
+    const funcInit = async () => {
+        await handleFetchListRegion();
+        await haddleFetchListProvince("Northern");
+        await haddleFetchProduct();
+    }
+
+    useEffect( () => {
+        funcInit();
     }, []);
+
+    // useEffect(() => {
+    // }, [isProvince])
 
     return (
         <>
@@ -198,8 +385,8 @@ const ShopPage = () => {
                     </div>
                 </div>
                 <div className="set-grid-shop relative z-10 region-container ">
-                    <div className="ml-10 mt-[80px] bg-gray-100 p-5 rounded-lg h-[70vh]">
-                        <div className="title-r text-[20px] font-bold">Region</div>
+                    <div className="ml-10 mt-[50px] bg-gray-100 p-5 rounded-lg h-[105vh]">
+                        <div className="title-r text-[20px] font-bold text-gray-600">Region</div>
                         <div className='list-of-region'>
                             {isListRegion.map((array, idx) => (
                                 <div className="flex justify-start mt-4" key={idx}>
@@ -209,10 +396,13 @@ const ShopPage = () => {
                                             className={
                                                 el === isSelectRegion
                                                     ? "bg-gray-500 text-white font-bold pl-[10px] pr-[10px] rounded-lg mr-2"
-                                                    : "bg-gray-300 pl-[10px] pr-[10px] rounded-lg mr-2"
+                                                    : "bg-gray-300 text-gray-600 pl-[10px] pr-[10px] rounded-lg mr-2"
                                             }
                                             onClick={() => {
+                                                setProvince("All");
+                                                // console.log(isProvince);
                                                 haddleFetchListProvince(el);
+                                                haddleFilterProduct(el, isProvince, isProduct, true)
                                             }}
                                         >
                                             {el}
@@ -222,7 +412,7 @@ const ShopPage = () => {
                                 </div>
                             ))}
                         </div>
-                        <div className="title-r text-[20px] mt-6 font-bold">Province</div>
+                        <div className="title-r text-[20px] mt-6 font-bold text-gray-600">Province</div>
                         <div>
                             {listProvince.map((array, idx) => (
                                 <div className="flex justify-start mt-4" key={idx}>
@@ -232,10 +422,12 @@ const ShopPage = () => {
                                             className={
                                                 el === isProvince
                                                     ? "bg-gray-500 text-white font-bold pl-[10px] pr-[10px] rounded-lg mr-2"
-                                                    : "bg-gray-300 pl-[10px] pr-[10px] rounded-lg mr-2"
+                                                    : "bg-gray-300 text-gray-600 pl-[10px] pr-[10px] rounded-lg mr-2"
                                             }
                                             onClick={() => {
-                                                filterProvince(el)
+                                                // filterProvince(el)
+                                                setProvince(el);
+                                                haddleFilterProduct(isSelectRegion, el, isProduct, false)
                                             }}
                                         >
                                             {el}
@@ -245,8 +437,28 @@ const ShopPage = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-[80px]  mr-10">
-                        <div className='title font-bold text-[20px]'>{isSelectRegion}</div>
+                    <div className="mt-[50px] mr-10 ">
+                        <div className='title font-bold text-[20px] bg-gray-200 pl-5 text-gray-600 rounded-lg'>{isSelectRegion}</div>
+                        <div className='grid grid-cols-3 gap-4 mt-5 mb-5  h-[100vh] overflow-scroll rounded-lg'>
+                            {
+                                isShowProduct.map((el, idx) => {
+                                    return (
+                                        <div  key={idx}>
+                                            {/* {el.title} */}
+                                            <ComponentCardShop 
+                                                region={el.region}
+                                                title={el.title}
+                                                intro={el.intro}
+                                                pricePerPerson={el.pricePerPerson}
+                                                province= {el.province}
+                                                content= {el.content}
+                                                images={el.images}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

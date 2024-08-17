@@ -6,44 +6,33 @@ const ComponentCardShop = (props) => {
         region,
         title,
         intro,
-        price,
-        img,
-        content
+        pricePerPerson,
+        province,
+        content,
+        images
     } = props
 
-    // console.log("content obj => ", content)
-    const setStringContent = JSON.stringify(content)
-
-    const [isPrice, setIsPrice] = useState();
-
-    useEffect(() => {
-        const convertStringPrice = JSON.parse(price)
-        setIsPrice(...convertStringPrice)
-    },[])
     
+
     return (
         <>
-                <div className="w-[350px]  border-[1px] border-zinc-300 mb-10 rounded-md ">
-                    <div className="">
-                        <img  className="set-card-image" src={`https://test-fetct-img-cloud-store-zt27agut7a-as.a.run.app/api/get/img/stream/${img[0]}`}/>
-                    </div>
-                    <div className="">
-                        <div className="ml-3 mt-3 mb-3 font-bold">{title}</div>
-                        <div className="set-scroll whitespace-pre-line ml-10" >
-                            <p>{intro}</p>
-                        </div>
-                    </div>
-                    <div className="mt-3 flex justify-end mr-5 translate-y-[-10px]">
-                        <Link 
-                            to={{
-                                pathname:`/product/${title}`,
-                                search: `?region=${encodeURIComponent(region)}&title=${encodeURIComponent(title)}&intro=${encodeURIComponent(intro)}&price=${encodeURIComponent(price)}&img=${encodeURIComponent([img])}&content=${encodeURIComponent(setStringContent)}`
-                            }}
-                            >
-                            <button className="bg-red-400 text-white pl-2 pr-2 rounded-md" >Read more</button>
-                        </Link>
-                    </div>
+            <div className='set-card w-[350px] h-[450px] rounded-lg'>
+                <div className='text-center pt-2 font-bold'>{title}</div>
+                <div className='mt-3'>
+                    <img className='w-[350px] h-[180px] object-cover' src={JSON.parse(images)[0]}/>
                 </div>
+                <div className='mt-2 ml-3'>
+                    {intro}
+                </div>
+                <div className='ml-5 translate-y-[80px]'>
+                    <div className='text-gray-500' >Price start from</div>
+                    <div className=''>
+                        <div  className="text-yellow-500 text-[23px] font-bold">Person: {JSON.parse(pricePerPerson)[0].person}</div>
+                        <div  className="text-yellow-500 text-[23px] font-bold">Price: {JSON.parse(pricePerPerson)[0].price}</div>
+                    </div>
+                    
+                </div>
+            </div>
         </>
     )
 }

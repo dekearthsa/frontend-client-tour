@@ -12,7 +12,7 @@ const ComponentPopularFeature =   () => {
         {
             images: '["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
             title: "test1",
-            region: "north",
+            region: "Northern",
             ord: 5,
             rate: 5,
             intro: "1111",
@@ -22,7 +22,7 @@ const ComponentPopularFeature =   () => {
         {
             images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
             title: "test2",
-            region: "north",
+            region: "Northern",
             intro: "22222",
             ord: 5,
             rate: 5,
@@ -32,7 +32,7 @@ const ComponentPopularFeature =   () => {
         {
             images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
             title: "test3",
-            region: "north",
+            region: "Northern",
             intro: "22222",
             ord: 5,
             rate: 5,
@@ -42,7 +42,7 @@ const ComponentPopularFeature =   () => {
         {
             images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
             title: "test4",
-            region: "north",
+            region: "Northern",
             intro: "22222",
             ord: 5,
             rate: 5,
@@ -52,7 +52,7 @@ const ComponentPopularFeature =   () => {
         {
             images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
             title: "test5",
-            region: "north",
+            region: "Northern",
             intro: "22222",
             ord: 5,
             rate: 5,
@@ -62,7 +62,7 @@ const ComponentPopularFeature =   () => {
         {
             images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
             title: "test6",
-            region: "north",
+            region: "Northern",
             intro: "22222",
             ord: 4,
             rate: 4,
