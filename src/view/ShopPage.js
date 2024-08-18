@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ComponentCardShop from '../component/ComponentShop/ComponentCardShop';
 
@@ -248,8 +249,14 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
     ]
-
+    const location = useLocation();
     const navigate = useNavigate();
+
+
+    const { locationStateProvince, locationStateRegion } = location.state;
+
+    // console.log(locationStateProvince, locationStateRegion)
+
     const [listSelectionRegion, setSelectionRegion] = useState([]);
     const [isListRegion, setListReigon] = useState([]);
     const [saveListProvince, setSaveListProvince] = useState([]);
@@ -296,11 +303,19 @@ const ShopPage = () => {
         return mod3Array;
     };
 
-    const haddleFetchProduct = async () => {
-        setLoadingProduct(true);
-        setProduct(demoProductData);
-        haddleFilterProduct(isSelectRegion, isProvince, demoProductData, false);
-        setLoadingProduct(false);
+    const haddleFetchProduct = async (isLocationStateProvince) => {
+        if(isLocationStateProvince){
+            setLoadingProduct(true);
+            setProduct(demoProductData);
+            haddleFilterProduct(isSelectRegion, isLocationStateProvince, demoProductData, false);
+            setLoadingProduct(false);
+        }else{
+            setLoadingProduct(true);
+            setProduct(demoProductData);
+            haddleFilterProduct(isSelectRegion, isProvince, demoProductData, false);
+            setLoadingProduct(false);
+        }
+
     }
 
     
@@ -355,9 +370,18 @@ const ShopPage = () => {
     };
 
     const funcInit = async () => {
+        console.log("locationStateRegion => ", locationStateRegion) 
+        console.log("locationStateProvince => ", locationStateProvince)
         await handleFetchListRegion();
-        await haddleFetchListProvince("Northern");
-        await haddleFetchProduct();
+        if(!locationStateProvince){
+            await haddleFetchListProvince("Northern");
+            await haddleFetchProduct();
+        }else{
+            await setProvince(locationStateProvince)
+            await haddleFetchListProvince(locationStateRegion);
+            await haddleFetchProduct(locationStateProvince);
+        }
+
     }
 
     useEffect( () => {
@@ -437,13 +461,14 @@ const ShopPage = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-[50px] mr-10 ">
+                    <div className="mt-[50px] mr-10">
                         <div className='title font-bold text-[20px] bg-gray-200 pl-5 text-gray-600 rounded-lg'>{isSelectRegion}</div>
-                        <div className='grid grid-cols-3 gap-4 mt-5 mb-5  h-[100vh] overflow-scroll rounded-lg'>
+                        <div className='grid grid-cols-3 gap-4 mt-5 mb-5  h-[100vh] overflow-scroll rounded-lg pb-5 pt-2'>
                             {
                                 isShowProduct.map((el, idx) => {
                                     return (
                                         <div  key={idx}>
+
                                             {/* {el.title} */}
                                             <ComponentCardShop 
                                                 region={el.region}
@@ -453,6 +478,7 @@ const ShopPage = () => {
                                                 province= {el.province}
                                                 content= {el.content}
                                                 images={el.images}
+                                                rate={el.rate}
                                             />
                                         </div>
                                     )
