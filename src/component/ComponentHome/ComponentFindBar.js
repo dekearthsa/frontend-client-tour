@@ -170,41 +170,37 @@ const ComponentFindBar = () => {
     useEffect(() => {
         funcInit();
     },[]);
- 
-    return(
-        <>
-            <div className="mr-[20%] mt-[8%]">
-                <div>
-                    <div className="font-bold text-white text-[35px] text-end">
-                        <div>Explore</div>
-                        <div>Amazing Thailand</div>
-                    </div>
-                    <div className="flex mt-10 justify-end">
-                        {/* <input className="h-[50px] w-[300px] rounded-l-3xl" /> */}
-                        <select   onChange={(e) => setProvince(e.target.value)} name="region" id="region" className="h-[50px] w-[300px] rounded-l-3xl">
-                            <option value="none"></option>
-                            {
-                                isRegion.map((el, idx) => {
-                                    return (
-                                        <option value={el}>{el}</option>
-                                    )
-                                })
-                            }
-                            {/* <option value="Chiang-mai">Chiang mai</option>
-                            <option value="Bangkok">Bangkok</option>
-                            <option value="Phuket">Phuket</option>
-                            <option value="Khon-Kaen">Khon Kaen</option> */}
-                        </select>
-                        <button onClick={handleButtonClick} className="w-[100px]  h-[50px] rounded-r-3xl bg-orange-400 text-white font-bold">Find</button>
-                    </div>
-                    <div className="mt-10 text-white font-bold">
-                        Discover Thailand's hotspots and hidden gems with local experts
-                    </div>
+    return (
+        <div className="p-4 md:mr-[20%] mt-[8%]">
+            <div className="text-center md:text-right">
+                <h1 className="font-bold text-white text-4xl leading-tight">
+                    Explore Amazing Thailand
+                </h1>
+                <div className="flex justify-center md:justify-end mt-6">
+                    <select 
+                        onChange={(e) => setProvince(e.target.value)} 
+                        name="region" 
+                        id="region" 
+                        className="h-12 w-[220px] md:w-[300px] rounded-l-full px-4 text-gray-700"
+                    >
+                        <option value="none">Select Province</option>
+                        {isRegion.map((el, idx) => (
+                            <option key={idx} value={el}>{el}</option>
+                        ))}
+                    </select>
+                    <button 
+                        onClick={handleButtonClick} 
+                        className="h-12 w-[100px] rounded-r-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-colors duration-300"
+                    >
+                        Find
+                    </button>
                 </div>
+                <p className="mt-6 text-white font-bold">
+                    Discover Thailand's hotspots and hidden gems with local experts.
+                </p>
             </div>
-
-        </>
-    )
+        </div>
+    );
 }
 
 export default ComponentFindBar

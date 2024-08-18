@@ -253,7 +253,7 @@ const ShopPage = () => {
     const navigate = useNavigate();
 
 
-    const { locationStateProvince, locationStateRegion } = location.state;
+    const { locationStateProvince, locationStateRegion } = location.state || {};
 
     // console.log(locationStateProvince, locationStateRegion)
 
@@ -370,8 +370,8 @@ const ShopPage = () => {
     };
 
     const funcInit = async () => {
-        console.log("locationStateRegion => ", locationStateRegion) 
-        console.log("locationStateProvince => ", locationStateProvince)
+        // console.log("locationStateRegion => ", locationStateRegion) 
+        // console.log("locationStateProvince => ", locationStateProvince)
         await handleFetchListRegion();
         if(!locationStateProvince){
             await haddleFetchListProvince("Northern");

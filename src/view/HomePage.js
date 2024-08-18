@@ -8,14 +8,14 @@ import ComponentTopRate from "../component/ComponentHome/ComponentTopRate"
 // import ComponentTest from "../component/ComponentTest/ComponentTest"
 // import MultiImageStream from "../component/ComponentTest/MultiImageStream"
 // import ComponentTestUploadContent from "../component/ComponentTest/ComponentTestUploadContent"
-import NavBar from '../component/Navbar/NavBar';
+import ComponentHomeNavbar from '../component/ComponentHome/ComponentHomeNavbar'
 import ComponentBottonBar from '../component/ComponentHome/ComponentBottonBar';
 
 const HomePage = () => {
 
     return(
         <>  
-            <NavBar/>
+            <ComponentHomeNavbar/>
             <ComponentTitleHome/>
             <ComponentPopularFeature/>
             <ComponentNavbarTour/>

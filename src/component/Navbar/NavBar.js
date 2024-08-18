@@ -1,11 +1,11 @@
-import ComponentHomeNavbar from "../ComponentHome/ComponentHomeNavbar"
+// import ComponentHomeNavbar from "../ComponentHome/ComponentHomeNavbar"
 
-const NavBar = () => {
-    return (
-        <>
-            <ComponentHomeNavbar />
-        </>
-    )
-}
+// const NavBar = () => {
+//     return (
+//         <>
+//             <ComponentHomeNavbar />
+//         </>
+//     )
+// }
 
-export default NavBar
+// export default NavBar

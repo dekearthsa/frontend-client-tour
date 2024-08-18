@@ -22,7 +22,7 @@ const ComponentHomeNavbar = () => {
 
     return(   
     <>
-    <div className="w-[100%] flex justify-between pt-10 text-white font-bold absolute">
+    <div className="w-[100%] z-10 flex justify-between pt-10 text-white font-bold absolute">
         <div>
             <div className="ml-[200px]">
                 <button onClick={haddleHomePage}>
