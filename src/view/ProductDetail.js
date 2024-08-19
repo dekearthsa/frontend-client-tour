@@ -1,6 +1,6 @@
 
 import { useLocation } from 'react-router-dom';
-import NavBar from '../component/Navbar/NavBar';
+import ComponentHomeNavbar from '../component/ComponentHome/ComponentHomeNavbar';
 import ComponentBottonBar from '../component/ComponentHome/ComponentBottonBar';
 // import ComponentTitleHome from '../component/ComponentHome/ComponentTitleHome';
 import ComponentStarToprate from '../component/ComponentHome/ComponentStarToprate';
@@ -26,7 +26,7 @@ const ProductDetail = () => {
         }}>
             <div>
                 <div className="translate-y-[-15px]">
-                    <NavBar />
+                    <ComponentHomeNavbar />
                 </div>
                 <div className='h-[70px] bg-red-400'></div>
             </div>

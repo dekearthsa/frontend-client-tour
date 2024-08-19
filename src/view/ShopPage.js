@@ -251,15 +251,9 @@ const ShopPage = () => {
     ]
     const location = useLocation();
     const navigate = useNavigate();
-
-
     const { locationStateProvince, locationStateRegion } = location.state || {};
 
-    // console.log(locationStateProvince, locationStateRegion)
-
-    const [listSelectionRegion, setSelectionRegion] = useState([]);
     const [isListRegion, setListReigon] = useState([]);
-    const [saveListProvince, setSaveListProvince] = useState([]);
     const [listProvince, setListProvince] = useState([]);
     const [isSelectRegion, setSelectRegion] = useState("Northern");
     const [isProvince, setProvince] = useState("All");
@@ -267,89 +261,36 @@ const ShopPage = () => {
     const [isShowProduct, setShowProduct] = useState([]);
     const [isLoadingProduct, setLoadingProduct] = useState([]);
 
-
-    const handleAboutPage = () => {
-        navigate("/about");
-    };
-
-    const handleShopPage = () => {
-        navigate("/shop");
-    };
-
-    const handleHomePage = () => {
-        navigate("/");
-    };
+    const handleNavigation = (path) => navigate(path);
 
     const funcMod3 = async (funcType, arrayRegion) => {
         let setArray = [];
         const mod3Array = [];
-        if (funcType === "region") {
-            for (let i = 0; i < arrayRegion.length; i++) {
-                setArray.push(arrayRegion[i].reigon);
-                if ((i + 1) % 2 === 0 || i === arrayRegion.length - 1) {
-                    mod3Array.push(setArray);
-                    setArray = [];
-                }
+        arrayRegion.forEach((region, i) => {
+            setArray.push(funcType === "region" ? region.reigon : region);
+            if ((i + 1) % 2 === 0 || i === arrayRegion.length - 1) {
+                mod3Array.push(setArray);
+                setArray = [];
             }
-        } else {
-            for (let i = 0; i < arrayRegion.length; i++) {
-                setArray.push(arrayRegion[i]);
-                if ((i + 1) % 2 === 0 || i === arrayRegion.length - 1) {
-                    mod3Array.push(setArray);
-                    setArray = [];
-                }
-            }
-        }
+        });
         return mod3Array;
     };
 
     const haddleFetchProduct = async (isLocationStateProvince) => {
-        if(isLocationStateProvince){
-            setLoadingProduct(true);
-            setProduct(demoProductData);
-            haddleFilterProduct(isSelectRegion, isLocationStateProvince, demoProductData, false);
-            setLoadingProduct(false);
-        }else{
-            setLoadingProduct(true);
-            setProduct(demoProductData);
-            haddleFilterProduct(isSelectRegion, isProvince, demoProductData, false);
-            setLoadingProduct(false);
-        }
-
-    }
-
-    
-
-
-    const haddleFilterProduct = async (region, province, productData, switchRegion) => {
-        // console.log(region, province, switchRegion)
         setLoadingProduct(true);
-        let arrayShowProduct = []
+        setProduct(demoProductData);
+        haddleFilterProduct(isSelectRegion, isLocationStateProvince || isProvince, demoProductData);
+        setLoadingProduct(false);
+    };
 
-            if(province === "All"){
-                for(let i = 0; i < productData.length; i++){
-                    if (region === productData[i].region){
-                        arrayShowProduct.push(productData[i]);
-                    }
-                }
-                setShowProduct(arrayShowProduct);
-                setLoadingProduct(false);
-            }else{
-                for(let i = 0; i < productData.length; i++){
-                    if (region === productData[i].region && province === productData[i].province){
-                        arrayShowProduct.push(productData[i]);
-                    }
-                }
-                setShowProduct(arrayShowProduct);
-                setLoadingProduct(false);
-            }
-            
-
-    }
-
-    // const filterProvince = async (province) => {
-    //     await setProvince(province);
-    // }
+    const haddleFilterProduct = async (region, province, productData) => {
+        setLoadingProduct(true);
+        const filteredProducts = productData.filter((product) =>
+            province === "All" ? product.region === region : product.region === region && product.province === province
+        );
+        setShowProduct(filteredProducts);
+        setLoadingProduct(false);
+    };
 
     const handleFetchListRegion = async () => {
         const listRegion = await funcMod3("region", demoDataListRegion);
@@ -357,138 +298,106 @@ const ShopPage = () => {
     };
 
     const haddleFetchListProvince = async (regionIn) => {
-        let ProvinceList = [];
-        setSaveListProvince(demoDataListRegion);
         setSelectRegion(regionIn);
-        for (let i = 0; i < demoDataListRegion.length; i++) {
-            if (regionIn === demoDataListRegion[i].reigon) {
-                ProvinceList = demoDataListRegion[i].data;
-            }
-        }
+        const ProvinceList = demoDataListRegion.find((region) => region.reigon === regionIn)?.data || [];
         const list3ModProvince = await funcMod3("province", ProvinceList);
         setListProvince(list3ModProvince);
     };
 
     const funcInit = async () => {
-        // console.log("locationStateRegion => ", locationStateRegion) 
-        // console.log("locationStateProvince => ", locationStateProvince)
         await handleFetchListRegion();
-        if(!locationStateProvince){
-            await haddleFetchListProvince("Northern");
-            await haddleFetchProduct();
-        }else{
-            await setProvince(locationStateProvince)
+        if (locationStateProvince) {
+            setProvince(locationStateProvince);
             await haddleFetchListProvince(locationStateRegion);
             await haddleFetchProduct(locationStateProvince);
+        } else {
+            await haddleFetchListProvince("Northern");
+            await haddleFetchProduct();
         }
+    };
 
-    }
-
-    useEffect( () => {
+    useEffect(() => {
         funcInit();
     }, []);
 
-    // useEffect(() => {
-    // }, [isProvince])
-
     return (
-        <>
-            <div className="relative h-[100vh]">
-                <div className="flex justify-between pt-5 pb-5 relative z-[999px] bg-red-400 text-white font-bold">
-                    <div className="ml-[200px]">
-                        <button onClick={handleHomePage}>
-                            LOGO
-                        </button>
+        <div className="relative min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 text-gray-800">
+            <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl">
+                <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
+                    LOGO
+                </button>
+                <nav className="flex space-x-8 text-lg">
+                    <button onClick={() => handleNavigation("/shop")} className="hover:text-gray-400">
+                        Tour
+                    </button>
+                    <button onClick={() => handleNavigation("/about")} className="hover:text-gray-400">
+                        About
+                    </button>
+                    <a href="#c-bottom-bar">
+                        <button className="hover:text-gray-400">Contact</button>
+                    </a>
+                </nav>
+            </header>
+            <main className="flex flex-col md:flex-row mt-10 px-6 md:px-20 space-y-10 md:space-y-0">
+                <aside className="md:w-1/4 bg-white p-6 shadow-lg rounded-lg border border-gray-300">
+                    <h3 className="text-xl font-semibold text-gray-900">Region</h3>
+                    <div className="mt-4 space-y-3">
+                        {isListRegion.map((array, idx) => (
+                            <div className="flex space-x-2" key={idx}>
+                                {array.map((el, idx2) => (
+                                    <button
+                                        key={idx2}
+                                        className={`w-full text-center py-2 rounded-lg font-semibold transition-all ${
+                                            el === isSelectRegion
+                                                ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
+                                                : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
+                                        }`}
+                                        onClick={() => {
+                                            setProvince("All");
+                                            haddleFetchListProvince(el);
+                                            haddleFilterProduct(el, isProvince, isProduct);
+                                        }}
+                                    >
+                                        {el}
+                                    </button>
+                                ))}
+                            </div>
+                        ))}
                     </div>
-                    <div className="mr-[200px] w-[30%] flex justify-around">
-                        <button onClick={handleShopPage}>Tour</button>
-                        <button onClick={handleAboutPage}>About</button>
-                        <a href='#c-bottom-bar'>
-                            <button>Contact</button>
-                        </a>
+                    <h3 className="text-xl font-semibold text-gray-900 mt-6">Province</h3>
+                    <div className="mt-4 space-y-3">
+                        {listProvince.map((array, idx) => (
+                            <div className="flex space-x-2" key={idx}>
+                                {array.map((el, idx2) => (
+                                    <button
+                                        key={idx2}
+                                        className={`w-full text-center py-2 rounded-lg font-semibold transition-all ${
+                                            el === isProvince
+                                                ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
+                                                : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
+                                        }`}
+                                        onClick={() => {
+                                            setProvince(el);
+                                            haddleFilterProduct(isSelectRegion, el, isProduct);
+                                        }}
+                                    >
+                                        {el}
+                                    </button>
+                                ))}
+                            </div>
+                        ))}
                     </div>
-                </div>
-                <div className="set-grid-shop relative z-10 region-container ">
-                    <div className="ml-10 mt-[50px] bg-gray-100 p-5 rounded-lg h-[105vh]">
-                        <div className="title-r text-[20px] font-bold text-gray-600">Region</div>
-                        <div className='list-of-region'>
-                            {isListRegion.map((array, idx) => (
-                                <div className="flex justify-start mt-4" key={idx}>
-                                    {array.map((el, idx2) => (
-                                        <button
-                                            key={idx2}
-                                            className={
-                                                el === isSelectRegion
-                                                    ? "bg-gray-500 text-white font-bold pl-[10px] pr-[10px] rounded-lg mr-2"
-                                                    : "bg-gray-300 text-gray-600 pl-[10px] pr-[10px] rounded-lg mr-2"
-                                            }
-                                            onClick={() => {
-                                                setProvince("All");
-                                                // console.log(isProvince);
-                                                haddleFetchListProvince(el);
-                                                haddleFilterProduct(el, isProvince, isProduct, true)
-                                            }}
-                                        >
-                                            {el}
-                                        </button>
-                                    ))
-                                    }
-                                </div>
-                            ))}
-                        </div>
-                        <div className="title-r text-[20px] mt-6 font-bold text-gray-600">Province</div>
-                        <div>
-                            {listProvince.map((array, idx) => (
-                                <div className="flex justify-start mt-4" key={idx}>
-                                    {array.map((el, idx2) => (
-                                        <button
-                                            key={idx2}
-                                            className={
-                                                el === isProvince
-                                                    ? "bg-gray-500 text-white font-bold pl-[10px] pr-[10px] rounded-lg mr-2"
-                                                    : "bg-gray-300 text-gray-600 pl-[10px] pr-[10px] rounded-lg mr-2"
-                                            }
-                                            onClick={() => {
-                                                // filterProvince(el)
-                                                setProvince(el);
-                                                haddleFilterProduct(isSelectRegion, el, isProduct, false)
-                                            }}
-                                        >
-                                            {el}
-                                        </button>
-                                    ))}
-                                </div>
-                            ))}
-                        </div>
+                </aside>
+                <section className="lg:ml-10 md:w-3/4">
+                    <h2 className="text-2xl font-semibold text-gray-700 mb-6">{isSelectRegion}</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {isShowProduct.map((product, idx) => (
+                            <ComponentCardShop key={idx} {...product} />
+                        ))}
                     </div>
-                    <div className="mt-[50px] mr-10">
-                        <div className='title font-bold text-[20px] bg-gray-200 pl-5 text-gray-600 rounded-lg'>{isSelectRegion}</div>
-                        <div className='grid grid-cols-3 gap-4 mt-5 mb-5  h-[100vh] overflow-scroll rounded-lg pb-5 pt-2'>
-                            {
-                                isShowProduct.map((el, idx) => {
-                                    return (
-                                        <div  key={idx}>
-
-                                            {/* {el.title} */}
-                                            <ComponentCardShop 
-                                                region={el.region}
-                                                title={el.title}
-                                                intro={el.intro}
-                                                pricePerPerson={el.pricePerPerson}
-                                                province= {el.province}
-                                                content= {el.content}
-                                                images={el.images}
-                                                rate={el.rate}
-                                            />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
+                </section>
+            </main>
+        </div>
     );
 };
 

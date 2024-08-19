@@ -24,7 +24,7 @@ const AboutPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
             {/* Navbar Section */}
-            <div className=" top-0 z-50 bg-black bg-opacity-70 shadow-lg">
+            <div className=" top-0 z-[999px] bg-black bg-opacity-70 shadow-lg">
                 <ComponentHomeNavbar />
             </div>
 
@@ -37,7 +37,7 @@ const AboutPage = () => {
                 }}
             >
                 <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-                <div className="relative z-10 flex items-center justify-center h-full">
+                <div className="relative z-1 flex items-center justify-center h-full">
                     <h1 className="text-5xl md:text-7xl font-extrabold text-white text-center px-4 tracking-wide">
                         Contact Us
                     </h1>
@@ -46,7 +46,7 @@ const AboutPage = () => {
 
             {/* Content Section */}
             <div className="container mx-auto px-4 py-12 md:py-20">
-                <div className=" bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white h-[80vh] shadow-2xl rounded-xl p-8 md:p-16">
+                <div className=" bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white h-[65vh] shadow-2xl rounded-xl p-8 md:p-16">
                     <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-center tracking-wide">
                         Get in Touch
                     </h2>
