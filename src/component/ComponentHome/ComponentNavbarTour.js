@@ -1,31 +1,40 @@
-import imgHeader from "../../img/CA_ChiangMai_TH_Header.webp"
-import {Link} from "react-router-dom";
+import imgHeader from "../../img/CA_ChiangMai_TH_Header.webp";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const ComponentNavbarTour = () => {
-    return (
-        <>
-            <div style={{backgroundImage: `url(${imgHeader})`}} className=" object-center object-cover text-center h-[370px] bg-gray-300 mt-5">
-                <div className="pt-[150px]">
-                    <div className=" text-white font-bold flex justify-center mb-2 h-[45px] ">
-                        <div className="bg-black w-[650px] text-[30px]">
-                            Explore Thailand on Our Award-Winning Tours
-                        </div>
-                        
-                    </div>
-                    <div className=" text-white font-bold flex justify-center">
-                        <div className="bg-black  w-[350px]">
-                            UNBEATABLE TOURS, LOVED BY TRAVELLERS
-                        </div>
-                    </div>
-                    <div>
-                        <Link to="/shop">
-                            <button className="bg-red-400 text-white font-bold w-[150px] h-[40px] rounded-lg mt-10">SHOW TOUR</button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
+    useEffect(() => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.remove('opacity-0', 'translate-y-10');
+                el.classList.add('opacity-100', 'translate-y-0');
+            }, index * 200); // Faster cascading effect for a luxurious feel
+        });
+    }, []);
 
-export default ComponentNavbarTour
+    return (
+        <div 
+            className="relative h-[370px] mt-5 rounded-lg overflow-hidden shadow-2xl"
+            style={{ backgroundImage: `url(${imgHeader})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
+
+            <div className="relative flex flex-col items-center justify-center h-full text-center text-white">
+                <div className="fade-in opacity-0 translate-y-10 bg-black/60 px-6 py-3 text-2xl md:text-3xl lg:text-4xl font-extrabold rounded-lg mb-3 transform transition-all duration-1000 ease-out">
+                    Explore Thailand on Our Award-Winning Tours
+                </div>
+                <div className="fade-in opacity-0 translate-y-10 bg-black/60 px-6 py-2 text-lg md:text-xl font-semibold rounded-lg transform transition-all duration-1000 ease-out">
+                    UNBEATABLE TOURS, LOVED BY TRAVELLERS
+                </div>
+                <Link to="/shop" className="mt-8 fade-in opacity-0 translate-y-10 transform transition-all duration-1000 ease-out">
+                    <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl">
+                        SHOW TOUR
+                    </button>
+                </Link>
+            </div>
+        </div>
+    );
+};
+
+export default ComponentNavbarTour;
