@@ -164,19 +164,27 @@ const ComponentFindBar = () => {
     }
 
     const funcInit = async () => {
+        
         await funcFetchListRegion();
     }
 
     useEffect(() => {
+        const fadeElements = document.querySelectorAll('.fade-ins');
+        fadeElements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.remove('opacity-0', 'translate-y-10');
+                el.classList.add('opacity-100', 'translate-y-0');
+            }, index * 200); // Faster cascading effect for a luxurious feel
+        });
         funcInit();
     },[]);
     return (
         <div className="p-4 md:mr-[20%] mt-[8%]">
             <div className="text-center md:text-right">
-                <h1 className="font-bold text-white text-4xl leading-tight">
+                <h1 className="font-bold text-white text-4xl leading-tight fade-ins opacity-0 translate-y-10 duration-1000 ease-out transform transition-all">
                     Explore Amazing Thailand
                 </h1>
-                <div className="flex justify-center md:justify-end mt-6">
+                <div className="flex justify-center md:justify-end mt-6 fade-ins opacity-0 translate-y-10 duration-1000 ease-out transform transition-all">
                     <select 
                         onChange={(e) => setProvince(e.target.value)} 
                         name="region" 
@@ -195,7 +203,7 @@ const ComponentFindBar = () => {
                         Find
                     </button>
                 </div>
-                <p className="mt-6 text-white font-bold">
+                <p className="mt-6 text-white font-bold fade-ins opacity-0 translate-y-10 duration-1000 ease-out transform transition-all">
                     Discover Thailand's hotspots and hidden gems with local experts.
                 </p>
             </div>

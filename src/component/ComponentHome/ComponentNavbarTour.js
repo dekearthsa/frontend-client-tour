@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const ComponentNavbarTour = () => {
     useEffect(() => {
-        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeElements = document.querySelectorAll('.fade-ins');
         fadeElements.forEach((el, index) => {
             setTimeout(() => {
                 el.classList.remove('opacity-0', 'translate-y-10');

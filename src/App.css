@@ -100,6 +100,22 @@ body{
 background: linear-gradient(318deg, rgba(250,250,250,1) 60%, rgba(194,208,212,1) 100%);
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0; /* Start invisible */
+  animation: fade-in 1s ease-out forwards;
+}
+
 @keyframes slide-in-right {
   0% {
     transform: translateX(100%);
