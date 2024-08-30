@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './view/HomePage';
 import ShopPage from './view/ShopPage';
 // import NavBar from './component/Navbar/NavBar';
-import ContractPage from './view/ContactPage';
+import ContactPage from './view/ContactPage';
 // import ComponentBottonBar from './component/ComponentHome/ComponentBottonBar';
 import ProductDetail from './view/ProductDetail';
 import AboutPage from './view/AboutPage';
@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/shop" element={<ShopPage/>}/>
-          <Route path="/contract" element={<ContractPage/>}/>
-          <Route path="/about" element={<AboutPage/>}></Route>
+          <Route path="/contact" element={<AboutPage/>}/>
+          <Route path="/about" element={<ContactPage/>}></Route>
           <Route path="/product/:name" element={<ProductDetail/>}/>
         </Routes>
         {/* <ComponentBottonBar/> */}

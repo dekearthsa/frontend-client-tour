@@ -15,7 +15,9 @@ const HomePage = () => {
 
     return(
         <>  
-            <ComponentHomeNavbar/>
+            <div className="text-white absolute  pt-5 font-bold w-[100%] z-10">
+                <ComponentHomeNavbar/>
+            </div>  
             <ComponentTitleHome/>
             <ComponentPopularFeature/>
             <ComponentNavbarTour/>

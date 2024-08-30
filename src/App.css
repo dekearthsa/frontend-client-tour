@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@800&family=Geologica:wght@100;400&family=Noto+Sans+Thai:wght@100;200;300;400;500;600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@media only screen and (min-width: 801px) {
+  .set-counting{
+    margin: auto;
+    border: 1px solid red;
+    transform: translateX(110px) translateY(50px);
+    font-size: 50px;
+  }
+
+  .set-con-page{
+    border: 1px solid red;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .set-counting{
+    margin: auto;
+    border: 1px solid red;
+    transform: translateX(110px) translateY(50px);
+    font-size: 60px;
+  }
+  .set-con-page{
+    border: 1px solid red;
+  }
+}
+
 body{
     margin: 0px;
     padding: 0px;
@@ -61,3 +86,32 @@ body{
 .set-card {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
+
+.card-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+/* 
+.set-navbar-pdt{
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+} */
+
+.on-set-detail-bg-product{
+  background: rgb(250,250,250);
+background: linear-gradient(318deg, rgba(250,250,250,1) 60%, rgba(194,208,212,1) 100%);
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+

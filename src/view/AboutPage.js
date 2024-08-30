@@ -24,7 +24,7 @@ const AboutPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
             {/* Navbar Section */}
-            <div className=" top-0 z-[999px] bg-black bg-opacity-70 shadow-lg">
+            <div className="text-white absolute  pt-10 font-bold w-[100%] z-10">
                 <ComponentHomeNavbar />
             </div>
 

@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import axios from "axios"
+// import { useState, useEffect } from 'react';
+// import axios from "axios"
 
 
-const ComponentPopupPopular = () => {
-    <div>
+// const ComponentPopupPopular = () => {
+//     <div>
         
-    </div>
-}
+//     </div>
+// }
 
-export default ComponentPopupPopular
+// export default ComponentPopupPopular

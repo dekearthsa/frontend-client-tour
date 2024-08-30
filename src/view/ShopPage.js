@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ComponentCardShop from '../component/ComponentShop/ComponentCardShop';
+import ComponentBottonBar from '../component/ComponentHome/ComponentBottonBar';
+import ComponentHomeNavbar from '../component/ComponentHome/ComponentHomeNavbar';
 
 const ShopPage = () => {
     const demoDataListRegion = [
@@ -115,9 +117,9 @@ const ShopPage = () => {
         },
     ];
 
-    const demoProductData =   [
+    const demoProductData = [
         {
-            images: '["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test1",
             province: "Chiang_Mai",
             region: "Northern",
@@ -128,7 +130,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test2",
             province: "Chiang_Mai",
             region: "Northern",
@@ -139,7 +141,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test3",
             province: "Lampang",
             region: "Northern",
@@ -150,7 +152,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test4",
             province: "Lampang",
             region: "Northern",
@@ -161,7 +163,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test5",
             province: "Lamphun",
             region: "Northern",
@@ -172,7 +174,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test6",
             province: "Lamphun",
             region: "Northern",
@@ -183,7 +185,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images: '["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test11",
             province: "Bangkok",
             region: "Central",
@@ -194,7 +196,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test21",
             province: "Bangkok",
             region: "Central",
@@ -205,7 +207,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test31",
             province: "Bangkok",
             region: "Central",
@@ -216,7 +218,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test41",
             province: "Ang_Thong",
             region: "Central",
@@ -227,7 +229,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test51",
             province: "Ayutthaya",
             region: "Central",
@@ -238,7 +240,7 @@ const ShopPage = () => {
             content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
         },
         {
-            images:'["https://storage.googleapis.com/buckettourimage/350972157_153616411033126_3199632291503394336_n.jpg", "https://storage.googleapis.com/buckettourimage/351017818_921086038967933_330552210752581170_n.jpg", "https://storage.googleapis.com/buckettourimage/351305964_953195299133491_4476191252979091198_n.jpg", "https://storage.googleapis.com/buckettourimage/351466829_6666487973382201_5881326755189581098_n.jpg"]',
+            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
             title: "test61",
             province: "Ayutthaya",
             region: "Central",
@@ -253,15 +255,31 @@ const ShopPage = () => {
     const navigate = useNavigate();
     const { locationStateProvince, locationStateRegion } = location.state || {};
 
+    const [isOpen, setIsOpen] = useState(false);
     const [isListRegion, setListReigon] = useState([]);
     const [listProvince, setListProvince] = useState([]);
     const [isSelectRegion, setSelectRegion] = useState("Northern");
     const [isProvince, setProvince] = useState("All");
     const [isProduct, setProduct] = useState([]);
     const [isShowProduct, setShowProduct] = useState([]);
-    const [isLoadingProduct, setLoadingProduct] = useState([]);
+    // const [isLoadingProduct, setLoadingProduct] = useState([]);
+    const [animate, setAnimate] = useState(true);
 
-    const handleNavigation = (path) => navigate(path);
+    const [isPhoneScreen, setIsphoneScreen] = useState();
+    // const [isCSSPhone, setCSSPhone] = useState();
+    // const [isCssScreen, setCssScreen] = useState();
+
+    // const handleNavigation = (path) => navigate(path);
+
+    const toggleSidebar = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const handleClickRegion = () => {
+        // Toggle the animate state to force re-render and re-trigger the animation
+        setAnimate(false);
+        setTimeout(() => setAnimate(true), 10);
+    };
 
     const funcMod3 = async (funcType, arrayRegion) => {
         let setArray = [];
@@ -277,19 +295,19 @@ const ShopPage = () => {
     };
 
     const haddleFetchProduct = async (isLocationStateProvince) => {
-        setLoadingProduct(true);
+        // setLoadingProduct(true);
         setProduct(demoProductData);
         haddleFilterProduct(isSelectRegion, isLocationStateProvince || isProvince, demoProductData);
-        setLoadingProduct(false);
+        // setLoadingProduct(false);
     };
 
     const haddleFilterProduct = async (region, province, productData) => {
-        setLoadingProduct(true);
+        // setLoadingProduct(true);
         const filteredProducts = productData.filter((product) =>
             province === "All" ? product.region === region : product.region === region && product.province === province
         );
         setShowProduct(filteredProducts);
-        setLoadingProduct(false);
+        // setLoadingProduct(false);
     };
 
     const handleFetchListRegion = async () => {
@@ -304,6 +322,19 @@ const ShopPage = () => {
         setListProvince(list3ModProvince);
     };
 
+    const haddleWindowScreenCss = async () => {
+        const screen = window.innerWidth;
+        if (screen <= 800) {
+            await setIsphoneScreen(true)
+            // await setCSSPhone("relative z-10");
+            // await setCssScreen("");
+        } else {
+            await setIsphoneScreen(false)
+            // await setCSSPhone("relative z-10 hidden");
+            // await setCssScreen();
+        }
+    }
+
     const funcInit = async () => {
         await handleFetchListRegion();
         if (locationStateProvince) {
@@ -317,88 +348,215 @@ const ShopPage = () => {
     };
 
     useEffect(() => {
+        haddleWindowScreenCss();
         funcInit();
     }, []);
 
-    return (
-        <div className="relative min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 text-gray-800">
-            <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl">
-                <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
-                    LOGO
-                </button>
-                <nav className="flex space-x-8 text-lg">
-                    <button onClick={() => handleNavigation("/shop")} className="hover:text-gray-400">
-                        Tour
+
+    if (isPhoneScreen) {
+        return (
+            <div 
+                className="relative  bg-cover bg-center  bg-gradient-to-b from-gray-100 to-gray-200 text-gray-800 "
+                style={{
+                    backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
+                }}
+            
+            >
+                {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
+                    <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
+                        LOGO
                     </button>
-                    <button onClick={() => handleNavigation("/about")} className="hover:text-gray-400">
-                        About
+                    <nav className="flex space-x-8 text-lg">
+                        <button onClick={() => handleNavigation("/shop")} className="hover:text-gray-400">
+                            Tour
+                        </button>
+                        <button onClick={() => handleNavigation("/about")} className="hover:text-gray-400">
+                            About
+                        </button>
+                        <a href="#c-bottom-bar">
+                            <button className="hover:text-gray-400">Contact</button>
+                        </a>
+                    </nav>
+                </header> */}
+                <div className="text-white h-[90px] bg-gradient-to-r from-gray-900 to-gray-800 opacity-80 pt-10 font-bold w-[100%] z-10">
+                <ComponentHomeNavbar />
+            </div>
+
+                <main className="flex flex-col md:flex-row mt-10 px-6 md:px-20 space-y-10 md:space-y-0">
+                    <div className="relative z-10">
+                        <button
+                            onClick={toggleSidebar}
+                            className="p-2 w-10 h-10 text-white bg-gray-300 rounded-full animate-bounce shadow-lg"
+                        >
+                        >
+                        </button>
+
+                        <div
+                            className={`fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                                } transition-transform duration-300 ease-in-out md:relative md:translate-x-0`}
+                        >
+                            <div className="flex items-center justify-between p-4 text-xl font-bold border-b border-gray-700">
+                                Selection
+                                <button onClick={toggleSidebar} className="md:hidden">
+                                    ✕
+                                </button>
+                            </div>
+                            <nav className="p-4 space-y-4">
+                                <h3 className="text-xl font-semibold text-white">Region</h3>
+                                <div className="mt-4 space-y-3">
+                                    {isListRegion.map((array, idx) => (
+                                        <div className="flex space-x-2" key={idx}>
+                                            {array.map((el, idx2) => (
+                                                <button
+                                                    key={idx2}
+                                                    className={`p-2 text-[11px] text-center py-2 rounded-lg   transition-all ${el === isSelectRegion
+                                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
+                                                        : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
+                                                        }`}
+                                                    onClick={() => {
+                                                        setProvince("All");
+                                                        haddleFetchListProvince(el);
+                                                        haddleFilterProduct(el, isProvince, isProduct);
+                                                    }}
+                                                >
+                                                    {el}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                                <h3 className="text-xl font-semibold text-white mt-6">Province</h3>
+                                <div className="mt-4 space-y-3">
+                                    {listProvince.map((array, idx) => (
+                                        <div className="flex space-x-2" key={idx}>
+                                            {array.map((el, idx2) => (
+                                                <button
+                                                    key={idx2}
+                                                    className={`p-2 text-[11px] text-center py-2 rounded-lg  transition-all ${el === isProvince
+                                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
+                                                        : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
+                                                        }`}
+                                                    onClick={() => {
+                                                        setProvince(el);
+                                                        haddleFilterProduct(isSelectRegion, el, isProduct);
+                                                    }}
+                                                >
+                                                    {el}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <section className="lg:ml-10 md:w-3/4">
+                        <h2 className="text-2xl font-semibold text-white mb-6">{isSelectRegion}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {isShowProduct.map((product, idx) => (
+                                <ComponentCardShop key={idx} {...product} />
+                            ))}
+                        </div>
+                    </section>
+                </main>
+                <div className='mt-[70px] opacity-80'>
+                    <ComponentBottonBar />
+                </div>
+            </div>
+        );
+    } else {
+        return (
+            <div 
+                className="relative h-[100vh] bg-cover bg-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 text-gray-800"
+                style={{
+                    backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
+                }}
+            >
+                {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
+                    <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
+                        LOGO
                     </button>
-                    <a href="#c-bottom-bar">
-                        <button className="hover:text-gray-400">Contact</button>
-                    </a>
-                </nav>
-            </header>
-            <main className="flex flex-col md:flex-row mt-10 px-6 md:px-20 space-y-10 md:space-y-0">
-                <aside className="md:w-1/4 bg-white p-6 shadow-lg rounded-lg border border-gray-300">
-                    <h3 className="text-xl font-semibold text-gray-900">Region</h3>
-                    <div className="mt-4 space-y-3">
-                        {isListRegion.map((array, idx) => (
-                            <div className="flex space-x-2" key={idx}>
-                                {array.map((el, idx2) => (
-                                    <button
-                                        key={idx2}
-                                        className={`w-full text-center py-2 rounded-lg font-semibold transition-all ${
-                                            el === isSelectRegion
+                    <nav className="flex space-x-8 text-lg">
+                        <button onClick={() => handleNavigation("/shop")} className="hover:text-gray-400">
+                            Tour
+                        </button>
+                        <button onClick={() => handleNavigation("/about")} className="hover:text-gray-400">
+                            About
+                        </button>
+                        <a href="#c-bottom-bar">
+                            <button className="hover:text-gray-400">Contact</button>
+                        </a>
+                    </nav>
+                </header> */}
+                <div className="text-white h-[110px]  bg-gradient-to-r from-gray-900 to-gray-800  pt-10 font-bold w-[100%] z-10 opacity-80">
+                    <ComponentHomeNavbar />
+                </div>
+                <main className=" flex flex-col md:flex-row mt-[75px] px-6 md:px-20 space-y-10 md:space-y-0">
+                    <aside className="md:w-1/4 bg-white p-6 shadow-lg rounded-lg border border-gray-300 ">
+                        <h3 className="text-xl font-semibold text-gray-900">Region</h3>
+                        <div className="mt-4 space-y-3">
+                            {isListRegion.map((array, idx) => (
+                                <div className="flex space-x-2" key={idx}>
+                                    {array.map((el, idx2) => (
+                                        <button
+                                            key={idx2}
+                                            className={`w-full text-center py-2 rounded-lg font-semibold transition-all ${el === isSelectRegion
                                                 ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
                                                 : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
-                                        }`}
-                                        onClick={() => {
-                                            setProvince("All");
-                                            haddleFetchListProvince(el);
-                                            haddleFilterProduct(el, isProvince, isProduct);
-                                        }}
-                                    >
-                                        {el}
-                                    </button>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mt-6">Province</h3>
-                    <div className="mt-4 space-y-3">
-                        {listProvince.map((array, idx) => (
-                            <div className="flex space-x-2" key={idx}>
-                                {array.map((el, idx2) => (
-                                    <button
-                                        key={idx2}
-                                        className={`w-full text-center py-2 rounded-lg font-semibold transition-all ${
-                                            el === isProvince
+                                                }`}
+                                            onClick={() => {
+                                                handleClickRegion();
+                                                setProvince("All");
+                                                haddleFetchListProvince(el);
+                                                haddleFilterProduct(el, isProvince, isProduct);
+                                            }}
+                                        >
+                                            {el}
+                                        </button>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 mt-6">Province</h3>
+                        <div className="mt-4 space-y-3">
+                            {listProvince.map((array, idx) => (
+                                <div className="flex space-x-2" key={idx}>
+                                    {array.map((el, idx2) => (
+                                        <button
+                                            key={idx2}
+                                            className={`w-full text-center py-2 rounded-lg font-semibold transition-all ${el === isProvince
                                                 ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
                                                 : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
-                                        }`}
-                                        onClick={() => {
-                                            setProvince(el);
-                                            haddleFilterProduct(isSelectRegion, el, isProduct);
-                                        }}
-                                    >
-                                        {el}
-                                    </button>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
-                </aside>
-                <section className="lg:ml-10 md:w-3/4">
-                    <h2 className="text-2xl font-semibold text-gray-700 mb-6">{isSelectRegion}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {isShowProduct.map((product, idx) => (
-                            <ComponentCardShop key={idx} {...product} />
-                        ))}
-                    </div>
-                </section>
-            </main>
-        </div>
-    );
+                                                }`}
+                                            onClick={() => {
+                                                setProvince(el);
+                                                haddleFilterProduct(isSelectRegion, el, isProduct);
+                                            }}
+                                        >
+                                            {el}
+                                        </button>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    </aside>
+                    <section className="lg:ml-10 md:w-3/4">
+
+                        <h2 className={animate?"text-2xl font-semibold text-gray-700 lg:text-white mb-6 slide-in-right":""}>{isSelectRegion}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {isShowProduct.map((product, idx) => (
+                                <ComponentCardShop key={idx} {...product} />
+                            ))}
+                        </div>
+                    </section>
+                </main>
+                <div className='lg:absolute w-[100%] bottom-0 opacity-80'>
+                    <ComponentBottonBar />
+                </div>
+            </div>
+        );
+    }
+
 };
 
 export default ShopPage;
