@@ -35,14 +35,14 @@ const ProductDetail = () => {
     return (
         <>
             <div
-                className=" bg-cover bg-center h-full  w-[100%]"
-                style={{
-                    backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
-                }}
+                className=" bg-cover bg-center h-full  w-[100%] bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)]"
+                // style={{
+                //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
+                // }}
             >
-                <div className="min-h-screen  opacity-90">
+                <div className="min-h-screen opacity-90">
 
-                    <div className="top-0  font-bold text-[20px] bg-slate-800  text-white shadow-md pb-[65px]">
+                    <div className="top-0 font-bold text-[20px] bg-slate-800  text-white shadow-md pb-[65px]">
                         <div className='translate-y-[30px]'>
                             <ComponentHomeNavbar />
                         </div>
@@ -63,7 +63,7 @@ const ProductDetail = () => {
                             </div> : <div className=""></div>
                         }
 
-                        <div className="mt-[30px]  grid grid-cols-2 gap-1">
+                        <div className="mt-[30px]  grid grid-cols-2  gap-1">
                             <div className=''>
                                 {
                                     images.map((el, idx) => {
@@ -74,7 +74,7 @@ const ProductDetail = () => {
                                                         haddlePopup();
                                                     }}
                                                     key={idx}
-                                                    className="mb-1 h-[260px] lg:h-[350px] overflow-hidden rounded-md lg:rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+                                                    className="mb-1 h-[260px]  lg:h-[350px] overflow-hidden rounded-md lg:rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
                                                 >
                                                     <img
                                                         className="w-full h-full object-cover"

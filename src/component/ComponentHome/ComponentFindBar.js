@@ -181,7 +181,7 @@ const ComponentFindBar = () => {
     return (
         <div className="p-4 md:mr-[20%] mt-[8%]">
             <div className="text-center md:text-right">
-                <h1 className="font-bold text-white text-4xl leading-tight fade-ins opacity-0 translate-y-10 duration-1000 ease-out transform transition-all">
+                <h1 className="font-bold text-white text-4xl leading-tight  opacity-0 translate-y-10 fade-ins duration-1000 ease-out transform transition-all">
                     Explore Amazing Thailand
                 </h1>
                 <div className="flex justify-center md:justify-end mt-6 fade-ins opacity-0 translate-y-10 duration-1000 ease-out transform transition-all">

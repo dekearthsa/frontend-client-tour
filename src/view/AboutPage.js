@@ -22,7 +22,7 @@ const AboutPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className=" bg-gradient-to-b from-gray-900 to-gray-800">
             {/* Navbar Section */}
             <div className="text-white absolute  pt-10 font-bold w-[100%] z-10">
                 <ComponentHomeNavbar />
@@ -38,7 +38,7 @@ const AboutPage = () => {
             >
                 <div className="absolute inset-0 bg-black bg-opacity-60"></div>
                 <div className="relative z-1 flex items-center justify-center h-full">
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-white text-center px-4 tracking-wide">
+                    <h1 className="fade-in duration-1000 ease-out transform transition-all text-5xl md:text-7xl font-extrabold text-white text-center px-4 tracking-wide">
                         Contact Us
                     </h1>
                 </div>
@@ -46,17 +46,17 @@ const AboutPage = () => {
 
             {/* Content Section */}
             <div className="container mx-auto px-4 py-12 md:py-20">
-                <div className=" bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white h-[65vh] shadow-2xl rounded-xl p-8 md:p-16">
-                    <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-center tracking-wide">
+                <div className=" bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white lg:h-[65vh] shadow-2xl rounded-xl p-8 md:p-16">
+                    <h2 className="fade-in duration-1500 ease-out transform transition-all text-4xl md:text-5xl font-extrabold mb-8 text-center tracking-wide">
                         Get in Touch
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-300 mb-12 text-center">
+                    <p className="fade-in duration-2000 ease-out transform transition-all text-lg md:text-xl text-gray-300 lg:mb-12 text-center">
                         We would love to hear from you! Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions.
                     </p>
 
                     {/* CoverFlowCarousel Component */}
                     <div className=''></div>
-                    <div className="pt-[130px] mt-24 md:mt-32">
+                    <div className="lg:pt-[130px] mt-24 md:mt-32">
                         <CoverFlowCarousel items={items} />
                     </div>
                 </div>

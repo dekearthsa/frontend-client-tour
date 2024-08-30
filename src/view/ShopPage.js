@@ -356,10 +356,10 @@ const ShopPage = () => {
     if (isPhoneScreen) {
         return (
             <div 
-                className="relative  bg-cover bg-center  bg-gradient-to-b from-gray-100 to-gray-200 text-gray-800 "
-                style={{
-                    backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
-                }}
+                className="relative bg-cover bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)] text-gray-800"
+                // style={{
+                //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
+                // }}
             
             >
                 {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
@@ -467,10 +467,10 @@ const ShopPage = () => {
     } else {
         return (
             <div 
-                className="relative h-[100vh] bg-cover bg-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 text-gray-800"
-                style={{
-                    backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
-                }}
+                className="relative h-[100vh] bg-cover bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)] text-gray-800"
+                // style={{
+                //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
+                // }}
             >
                 {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
                     <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
