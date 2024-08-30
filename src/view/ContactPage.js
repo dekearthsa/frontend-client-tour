@@ -1,4 +1,5 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+import ComponentHomeNavbar from '../component/ComponentHome/ComponentHomeNavbar';
 
 const ContactPage = () => {
 
@@ -18,23 +19,21 @@ const ContactPage = () => {
 
     useEffect(() => {
         funcCalRage();
-    },[])
+    }, [])
 
     return (
         <>
-            <div className="set-con-page w-[100%]">
-                <div class="grid grid-cols-2 gap-1 w-[650px]">
-                    <div class="col-span-2">
-                        <img src="https://www.digi.com/images/blog/edge_compute_aws_greengrass-io" alt="Gallery 1" className="object-cover  w-[100%] h-auto" />
-                    </div>
-                    <div class="col-span-1">
-                        <img src="https://www.digi.com/images/blog/edge_compute_aws_greengrass-io" alt="Gallery 2" className="object-cover w-[100%] h-auto" />
-                    </div>
-                    <div className="col-span-1 ">
-                        <div className='set-counting absolute w-[100%] text-gray-700 font-bold text-[30px] z-10 m-auto'>
-                            +{countImg}
-                        </div>
-                        <img src="https://www.digi.com/images/blog/edge_compute_aws_greengrass-io" alt="Gallery 3" className="object-cover w-[100%] h-auto opacity-70" />
+            <div className="text-white absolute bg-black h-[100px]  pt-10 font-bold w-[100%] z-10">
+                <ComponentHomeNavbar />
+            </div>
+            <div className="translate-y-[200px]">
+                <div className="translate-x-[75px] translate-y-[10px] relative flex h-5 w-5 m-auto text-center items-center   font-bold text-[20px]">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-5 w-5 bg-red-500"></span>
+                </div>
+                <div className='flex justify-center '>
+                    <div className="w-[150px] p-1 text-center font-bold text-[20px] border-[2px] border-red-300 rounded-lg">
+                        <div className='text-red-600'>About page</div>
                     </div>
                 </div>
             </div>

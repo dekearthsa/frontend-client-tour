@@ -355,12 +355,12 @@ const ShopPage = () => {
 
     if (isPhoneScreen) {
         return (
-            <div 
+            <div
                 className="relative bg-cover bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)] text-gray-800"
-                // style={{
-                //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
-                // }}
-            
+            // style={{
+            //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
+            // }}
+
             >
                 {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
                     <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
@@ -379,98 +379,104 @@ const ShopPage = () => {
                     </nav>
                 </header> */}
                 <div className="text-white h-[90px] bg-gradient-to-r from-gray-900 to-gray-800 opacity-80 pt-10 font-bold w-[100%] z-10">
-                <ComponentHomeNavbar />
-            </div>
-
-                <main className="flex flex-col md:flex-row mt-10 px-6 md:px-20 space-y-10 md:space-y-0">
-                    <div className="relative z-10">
+                    <ComponentHomeNavbar />
+                </div>
+                <div className='h-[100vh]  overflow-y-auto '>
+                    <div className='fixed translate-y-[30px] translate-x-[20px] z-10'>
                         <button
                             onClick={toggleSidebar}
-                            className="p-2 w-10 h-10 text-white bg-gray-300 rounded-full animate-bounce shadow-lg"
+                            className="p-2 w-10 h-10  text-white bg-gray-400 rounded-full animate-bounce shadow-lg"
                         >
-                        >
+                            >
                         </button>
-
-                        <div
-                            className={`fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
-                                } transition-transform duration-300 ease-in-out md:relative md:translate-x-0`}
-                        >
-                            <div className="flex items-center justify-between p-4 text-xl font-bold border-b border-gray-700">
-                                Selection
-                                <button onClick={toggleSidebar} className="md:hidden">
-                                    ✕
-                                </button>
-                            </div>
-                            <nav className="p-4 space-y-4">
-                                <h3 className="text-xl font-semibold text-white">Region</h3>
-                                <div className="mt-4 space-y-3">
-                                    {isListRegion.map((array, idx) => (
-                                        <div className="flex space-x-2" key={idx}>
-                                            {array.map((el, idx2) => (
-                                                <button
-                                                    key={idx2}
-                                                    className={`p-2 text-[11px] text-center py-2 rounded-lg   transition-all ${el === isSelectRegion
-                                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
-                                                        : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
-                                                        }`}
-                                                    onClick={() => {
-                                                        setProvince("All");
-                                                        haddleFetchListProvince(el);
-                                                        haddleFilterProduct(el, isProvince, isProduct);
-                                                    }}
-                                                >
-                                                    {el}
-                                                </button>
-                                            ))}
-                                        </div>
-                                    ))}
-                                </div>
-                                <h3 className="text-xl font-semibold text-white mt-6">Province</h3>
-                                <div className="mt-4 space-y-3">
-                                    {listProvince.map((array, idx) => (
-                                        <div className="flex space-x-2" key={idx}>
-                                            {array.map((el, idx2) => (
-                                                <button
-                                                    key={idx2}
-                                                    className={`p-2 text-[11px] text-center py-2 rounded-lg  transition-all ${el === isProvince
-                                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
-                                                        : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
-                                                        }`}
-                                                    onClick={() => {
-                                                        setProvince(el);
-                                                        haddleFilterProduct(isSelectRegion, el, isProduct);
-                                                    }}
-                                                >
-                                                    {el}
-                                                </button>
-                                            ))}
-                                        </div>
-                                    ))}
-                                </div>
-                            </nav>
-                        </div>
                     </div>
-                    <section className="lg:ml-10 md:w-3/4">
-                        <h2 className="text-2xl font-semibold text-white mb-6">{isSelectRegion}</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {isShowProduct.map((product, idx) => (
-                                <ComponentCardShop key={idx} {...product} />
-                            ))}
+
+                    <main className="flex flex-col md:flex-row mt-10 px-6 md:px-20 space-y-10 md:space-y-0">
+                        <div className="relative z-10">
+
+
+                            <div
+                                className={`fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                                    } transition-transform duration-300 ease-in-out md:relative md:translate-x-0`}
+                            >
+                                <div className="flex items-center justify-between p-4 text-xl font-bold border-b border-gray-700">
+                                    Selection
+                                    <button onClick={toggleSidebar} className="md:hidden">
+                                        ✕
+                                    </button>
+                                </div>
+                                <nav className="p-4 space-y-4">
+                                    <h3 className="text-xl font-semibold text-white">Region</h3>
+                                    <div className="mt-4 space-y-3">
+                                        {isListRegion.map((array, idx) => (
+                                            <div className="flex space-x-2" key={idx}>
+                                                {array.map((el, idx2) => (
+                                                    <button
+                                                        key={idx2}
+                                                        className={`p-2 text-[11px] text-center py-2 rounded-lg   transition-all ${el === isSelectRegion
+                                                            ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
+                                                            : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
+                                                            }`}
+                                                        onClick={() => {
+                                                            setProvince("All");
+                                                            haddleFetchListProvince(el);
+                                                            haddleFilterProduct(el, isProvince, isProduct);
+                                                        }}
+                                                    >
+                                                        {el}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <h3 className="text-xl font-semibold text-white mt-6">Province</h3>
+                                    <div className="mt-4 space-y-3">
+                                        {listProvince.map((array, idx) => (
+                                            <div className="flex space-x-2" key={idx}>
+                                                {array.map((el, idx2) => (
+                                                    <button
+                                                        key={idx2}
+                                                        className={`p-2 text-[11px] text-center py-2 rounded-lg  transition-all ${el === isProvince
+                                                            ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
+                                                            : 'bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200'
+                                                            }`}
+                                                        onClick={() => {
+                                                            setProvince(el);
+                                                            haddleFilterProduct(isSelectRegion, el, isProduct);
+                                                        }}
+                                                    >
+                                                        {el}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
-                    </section>
-                </main>
-                <div className='mt-[70px] opacity-80'>
-                    <ComponentBottonBar />
+                        <section className="lg:ml-10 md:w-3/4">
+                            <h2 className="text-2xl font-semibold text-white mb-6">{isSelectRegion}</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {isShowProduct.map((product, idx) => (
+                                    <ComponentCardShop key={idx} {...product} />
+                                ))}
+                            </div>
+                        </section>
+                    </main>
+                    
                 </div>
+                <div className='mt-[70px] opacity-80'>
+                        <ComponentBottonBar />
+                    </div>
             </div>
         );
     } else {
         return (
-            <div 
+            <div
                 className="relative h-[100vh] bg-cover bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)] text-gray-800"
-                // style={{
-                //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
-                // }}
+            // style={{
+            //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
+            // }}
             >
                 {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
                     <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
@@ -542,7 +548,7 @@ const ShopPage = () => {
                     </aside>
                     <section className="lg:ml-10 md:w-3/4">
 
-                        <h2 className={animate?"text-2xl font-semibold text-gray-700 lg:text-white mb-6 slide-in-right":""}>{isSelectRegion}</h2>
+                        <h2 className={animate ? "text-2xl font-semibold text-gray-700 lg:text-white mb-6 slide-in-right" : ""}>{isSelectRegion}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {isShowProduct.map((product, idx) => (
                                 <ComponentCardShop key={idx} {...product} />
