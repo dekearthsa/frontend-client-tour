@@ -16,7 +16,7 @@ const ComponentTopRate = () => {
             rate: 5,
             intro: "1111",
             pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
         },
         {
             images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
@@ -26,7 +26,7 @@ const ComponentTopRate = () => {
             ord: 5,
             rate: 5,
             pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
         },
         {
             images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
@@ -36,7 +36,7 @@ const ComponentTopRate = () => {
             ord: 5,
             rate: 5,
             pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
         },
         {
             images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
@@ -46,7 +46,7 @@ const ComponentTopRate = () => {
             ord: 5,
             rate: 5,
             pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
         },
         {
             images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
@@ -56,7 +56,7 @@ const ComponentTopRate = () => {
             ord: 5,
             rate: 5,
             pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
         },
         {
             images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
@@ -66,7 +66,7 @@ const ComponentTopRate = () => {
             ord: 4,
             rate: 4,
             pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa"},{"day":2, "content":"bbbbb"},{"day":3, "content":"Cccccc"}]'
+            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
         },
     ]
 

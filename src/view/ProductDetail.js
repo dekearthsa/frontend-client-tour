@@ -35,7 +35,7 @@ const ProductDetail = () => {
     return (
         <>
             <div
-                className=" bg-cover bg-center h-full  w-[100%] bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)]"
+                className="bg-cover bg-center h-full  w-[100%] bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)]"
                 // style={{
                 //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
                 // }}
@@ -184,7 +184,8 @@ const ProductDetail = () => {
                                     {setContentJSON.map((el, idx) => (
                                         <div key={idx} className="bg-gray-50 border border-gray-300 rounded-lg p-4 shadow-sm">
                                             <h3 className="text-[25px] font-semibold text-gray-800">DAY {el.day}</h3>
-                                            <p className="text-[20px] text-gray-600 mt-2">{el.content}</p>
+                                            <img className='mt-5 object-fill rounded-lg w-[260px] h-[150px] lg:w-[550px] lg:h-[310px]' src={el.image} />
+                                            <p className="text-[20px] text-gray-600 mt-10">{el.content}</p>
                                         </div>
                                     ))}
                                 </div>
