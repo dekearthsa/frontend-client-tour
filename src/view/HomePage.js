@@ -21,10 +21,12 @@ const HomePage = () => {
             <ComponentTitleHome/>
             <ComponentPopularFeature/>
             <ComponentNavbarTour/>
-            <div className="bg-gray-100">
+            {/* <div className="bg-gray-100">
                 <ComponentChooseBrand />
+            </div> */}
+            <div className="bg-gray-100">
+                <ComponentTopRate/>
             </div>
-            <ComponentTopRate/>
             <ComponentBottonBar/>
             {/* <ComponentTest/> */}
         </>

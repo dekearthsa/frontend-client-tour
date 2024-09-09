@@ -104,7 +104,7 @@ const ComponentPopularFeature =   () => {
     }, []);
 
     return (
-        <div className="max-[100%] mx-auto mt-12 ">
+        <div className="max-[100%] mx-auto  pt-10 pb-10 bg-gray-100">
             <div className="text-center">
                 <div className="text-gray-500 text-lg">Feature</div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Popular Destinations</h2>

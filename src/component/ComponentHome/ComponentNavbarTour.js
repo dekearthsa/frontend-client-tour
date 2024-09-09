@@ -15,7 +15,7 @@ const ComponentNavbarTour = () => {
 
     return (
         <div 
-            className="relative h-[370px] mt-5 lg:rounded-lg overflow-hidden shadow-2xl"
+            className="relative h-[370px] pt-5 lg:rounded-lg overflow-hidden shadow-2xl"
             style={{ backgroundImage: `url(${imgHeader})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
