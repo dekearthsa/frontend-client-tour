@@ -88,6 +88,10 @@
 
   }
 
+  .center-about-p{
+    text-align: center;
+  }
+
   .set-counting{
     margin: auto;
     border: 1px solid red;
@@ -112,7 +116,6 @@
   .set-img-text-02{
     font-size: 140px;
     text-transform: uppercase;
-    
     font-weight: 900;
     letter-spacing: 0px;
     background: url("https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/67/2023/08/29083703/bangkok-old-town-walking-tour.jpg") 50% 50%;
@@ -124,7 +127,6 @@
   .set-img-text-03{
     font-size: 140px;
     text-transform: uppercase;
-    
     font-weight: 900;
     letter-spacing: 0px;
     background: url("https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/67/2023/08/29083714/guide-bkk-old-town.jpg") 50% 50%;
@@ -136,7 +138,6 @@
   .set-img-text-04{
     font-size: 140px;
     text-transform: uppercase;
-    
     font-weight: 900;
     letter-spacing: 0px;
     background: url("https://media.architecturaldigest.com/photos/59ee400e61c6482fab68ec67/master/w_2580%2Cc_limit/World's%2520Scariest-Looking%2520Structures%252014.jpg") 50% 50%;
