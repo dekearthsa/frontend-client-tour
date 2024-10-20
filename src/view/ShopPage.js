@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ComponentCardShop from '../component/ComponentShop/ComponentCardShop';
@@ -262,21 +261,15 @@ const ShopPage = () => {
     const [isProvince, setProvince] = useState("All");
     const [isProduct, setProduct] = useState([]);
     const [isShowProduct, setShowProduct] = useState([]);
-    // const [isLoadingProduct, setLoadingProduct] = useState([]);
     const [animate, setAnimate] = useState(true);
 
     const [isPhoneScreen, setIsphoneScreen] = useState();
-    // const [isCSSPhone, setCSSPhone] = useState();
-    // const [isCssScreen, setCssScreen] = useState();
-
-    // const handleNavigation = (path) => navigate(path);
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
 
     const handleClickRegion = () => {
-        // Toggle the animate state to force re-render and re-trigger the animation
         setAnimate(false);
         setTimeout(() => setAnimate(true), 10);
     };
@@ -295,19 +288,15 @@ const ShopPage = () => {
     };
 
     const haddleFetchProduct = async (isLocationStateProvince) => {
-        // setLoadingProduct(true);
         setProduct(demoProductData);
         haddleFilterProduct(isSelectRegion, isLocationStateProvince || isProvince, demoProductData);
-        // setLoadingProduct(false);
     };
 
     const haddleFilterProduct = async (region, province, productData) => {
-        // setLoadingProduct(true);
         const filteredProducts = productData.filter((product) =>
             province === "All" ? product.region === region : product.region === region && product.province === province
         );
         setShowProduct(filteredProducts);
-        // setLoadingProduct(false);
     };
 
     const handleFetchListRegion = async () => {
@@ -326,12 +315,8 @@ const ShopPage = () => {
         const screen = window.innerWidth;
         if (screen <= 800) {
             await setIsphoneScreen(true)
-            // await setCSSPhone("relative z-10");
-            // await setCssScreen("");
         } else {
             await setIsphoneScreen(false)
-            // await setCSSPhone("relative z-10 hidden");
-            // await setCssScreen();
         }
     }
 
@@ -357,27 +342,7 @@ const ShopPage = () => {
         return (
             <div
                 className="relative bg-cover bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)] text-gray-800"
-            // style={{
-            //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
-            // }}
-
             >
-                {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
-                    <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
-                        LOGO
-                    </button>
-                    <nav className="flex space-x-8 text-lg">
-                        <button onClick={() => handleNavigation("/shop")} className="hover:text-gray-400">
-                            Tour
-                        </button>
-                        <button onClick={() => handleNavigation("/about")} className="hover:text-gray-400">
-                            About
-                        </button>
-                        <a href="#c-bottom-bar">
-                            <button className="hover:text-gray-400">Contact</button>
-                        </a>
-                    </nav>
-                </header> */}
                 <div className="text-white h-[90px] bg-gradient-to-r from-gray-900 to-gray-800 opacity-80 pt-10 font-bold w-[100%] z-10">
                     <ComponentHomeNavbar />
                 </div>
@@ -477,26 +442,7 @@ const ShopPage = () => {
         return (
             <div
                 className="relative h-[100vh] bg-cover bg-[rgb(250,250,250)] bg-gradient-to-tl from-[rgba(250,250,250,1)] to-[rgba(67,89,96,1)] text-gray-800"
-            // style={{
-            //     backgroundImage: `url(https://img.goodfon.com/original/2048x1128/b/40/bangkok-thailand-bangkok-tailand-gorod-krasota-noch.jpg)`,
-            // }}
             >
-                {/* <header className="flex justify-between p-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl ">
-                    <button onClick={() => handleNavigation("/")} className="text-2xl font-bold">
-                        LOGO
-                    </button>
-                    <nav className="flex space-x-8 text-lg">
-                        <button onClick={() => handleNavigation("/shop")} className="hover:text-gray-400">
-                            Tour
-                        </button>
-                        <button onClick={() => handleNavigation("/about")} className="hover:text-gray-400">
-                            About
-                        </button>
-                        <a href="#c-bottom-bar">
-                            <button className="hover:text-gray-400">Contact</button>
-                        </a>
-                    </nav>
-                </header> */}
                 <div className="text-white h-[110px]  bg-gradient-to-r from-gray-900 to-gray-800  pt-10 font-bold w-[100%] z-10 opacity-80">
                     <ComponentHomeNavbar />
                 </div>
