@@ -77,15 +77,9 @@ const ContactPage = () => {
         }
     ]
 
-    // const [countImg, setCountImg] = useState();
     const [isServices, setServices] = useState([]);
     const [isStaff, setStaff] = useState([])
-    const [isContent, setContent] = useState([{
-        contentType: "",
-        iconUrl: "",
-        title: "",
-        content: ""
-    }]);
+
     const [staffHover, setStaffHover] = useState("");
     const [isStorgeContent, setStorageContent] = useState({
         imgUrl: "",
@@ -97,13 +91,6 @@ const ContactPage = () => {
         title: "",
         content: "",
     });
-    // const [isStorageService1, setStorageService1] = useState("");
-    // const [isStorageService2, setStorageService2] = useState("");
-    // const [isStorageService3, setStorageService3] = useState("");
-
-    // const funcCalRage = () => {
-    //     setCountImg(demoPic.length - 2)
-    // }
 
     const haddleFetchAboutPage = async () => {
         await setServices(demoServices);
@@ -128,7 +115,6 @@ const ContactPage = () => {
                 
             }
         })
-        await setContent(demoContent);
         await setStaff(demoStaff)
     }
 
