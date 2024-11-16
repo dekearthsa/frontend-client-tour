@@ -1,97 +1,31 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import axios from "axios"
+import  ComponentCardLoading  from '../ComponentAnimationLoading/ComponentCardLoading';
 
+// import axios from "axios"
 // import ComponentStarToprate from "./ComponentStarToprate";
 
 const ComponentTopRate = () => {
     // const [dataPop,  setDataPop] = useState([]);
     const [isPopData, setIsPopData] = useState([]);
-    const demoPop = [
-        {
-            images: '["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
-            title: "test1",
-            region: "north",
-            ord: 5,
-            rate: 5,
-            intro: "1111",
-            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
-        },
-        {
-            images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
-            title: "test2",
-            region: "north",
-            intro: "22222",
-            ord: 5,
-            rate: 5,
-            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
-        },
-        {
-            images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
-            title: "test3",
-            region: "north",
-            intro: "22222",
-            ord: 5,
-            rate: 5,
-            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
-        },
-        {
-            images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
-            title: "test4",
-            region: "north",
-            intro: "22222",
-            ord: 5,
-            rate: 5,
-            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
-        },
-        {
-            images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
-            title: "test5",
-            region: "north",
-            intro: "22222",
-            ord: 5,
-            rate: 5,
-            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
-        },
-        {
-            images:'["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg","https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg", "https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]',
-            title: "test6",
-            region: "north",
-            intro: "22222",
-            ord: 4,
-            rate: 4,
-            pricePerPerson: '[{"person": 1, "price": 1000}, {"person": 2, "price": 2000}]',
-            content: '[{"day":1, "content":"aaaaa", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":2, "content":"bbbbb", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]},{"day":3, "content":"Cccccc", "image":["https://as1.ftcdn.net/v2/jpg/03/30/56/26/1000_F_330562667_q3zqwfRQQGbzZNZ0XKDrxuBNRDfyhnNO.jpg"]}]'
-        },
-    ]
+    const [loading, setLoading] = useState(true);
 
-    const funcRandomPopular = (data) => {
-        const lengthData = data.length;
-        const dupIdx = [];
-        const setDataPop = [];
 
-        for (let i = 0; i < 4; i++) {
-            while (true) {
-                const rndIdx = Math.floor(Math.random() * lengthData);
-                if (!dupIdx.includes(rndIdx)) {
-                    dupIdx.push(rndIdx);
-                    setDataPop.push(data[rndIdx]);
-                    break;
+
+    const haddleGetDataPopular = async () => {
+        let arrayPopular = []
+        const fetchProduct = await axios.get("https://backend-node-product-505177410747.asia-southeast1.run.app/api/get/product");
+        for(let i = 0; i < fetchProduct.data.length; i++){
+            if(fetchProduct.data[i].ord === 5){
+                if(i > 4){
+                    break
                 }
+                arrayPopular.push(fetchProduct.data[i])
             }
         }
-        return setDataPop;
-    };
-
-    const haddleGetDataPopular = () => {
-        const setArrayPop = demoPop.filter(item => item.rate === 5);
-        const dataPopRnd = funcRandomPopular(setArrayPop);
-        setIsPopData(dataPopRnd);
+        setLoading(false)
+        setIsPopData(arrayPopular);
     };
 
     useEffect(() => {
@@ -102,13 +36,27 @@ const ComponentTopRate = () => {
         <div className="p-6 md:p-10 lg:p-16 w-[95%] md:w-[90%] m-auto">
             <div className="text-gray-600 text-[18px] md:text-[20px] font-medium">Special Offers</div>
             <div className="text-[28px] md:text-[36px] font-bold text-gray-800 mb-8">Top Rated Tours</div>
+            {
+                loading === true? <ComponentCardLoading/> : ""
+            }
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                
                 {isPopData.map((el, idx) => (
                     <Link
                         key={idx}
                         to={{
                             pathname: `product/:${el.title}`,
-                            search: `?region=${encodeURIComponent(el.region)}&title=${encodeURIComponent(el.title)}&intro=${encodeURIComponent(el.intro)}&price=${encodeURIComponent(el.pricePerPerson)}&img=${encodeURIComponent(el.images)}&content=${encodeURIComponent(el.content)}&rate=${encodeURIComponent(el.rate)}`
+                            search: `?region=${encodeURIComponent(el.region)}
+                                    &province=${encodeURIComponent(el.province)}
+                                    &title=${encodeURIComponent(el.title)}
+                                    &intro=${encodeURIComponent(el.intro)}
+                                    &price=${encodeURIComponent(el.pricePerPerson)}
+                                    &img=${encodeURIComponent(el.images)}
+                                    &content=${encodeURIComponent(el.content)}
+                                    &rate=${encodeURIComponent(el.rate)}
+                                    &ord=${encodeURIComponent(el.ord)}
+                                    &static_id=${encodeURIComponent(el.static_id)}
+                                    `
                         }}
                         className="group"
                     >
@@ -127,7 +75,7 @@ const ComponentTopRate = () => {
                                     ))}
                                 </div>
                                 <h3 className="text-[22px] md:text-[24px] font-bold mb-1">{el.title}</h3>
-                                <p className="text-gray-600 text-[14px] md:text-[16px] mb-4">{el.intro}</p>
+                                <p className="text-gray-600 text-[14px] md:text-[16px] mb-4">{el.intro.slice(0,33)}...</p>
                                 <p className="text-gray-500 text-[16px]">Starting from:</p>
                                 <p className="text-gray-800 text-[24px] font-bold">฿{JSON.parse(el.pricePerPerson)[0]['price']}</p>
                             </div>
