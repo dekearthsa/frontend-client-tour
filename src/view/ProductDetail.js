@@ -155,7 +155,7 @@ const ProductDetail = () => {
                                     </svg>
                                     <span className="ml-4 text-[20px] md:text-[25px]">Introduction</span>
                                 </h2>
-                                <div className="border border-gray-300 text-gray-600 leading-relaxed break-words p-4 md:p-6">
+                                <div className=" text-[14px] md:text-[19px]  text-gray-600 leading-relaxed break-words p-4 md:p-6">
                                     {intro}
                                 </div>
                             </div>
