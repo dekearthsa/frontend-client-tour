@@ -8,7 +8,7 @@ COPY . .
 
 ENV PYTHONPATH=${PYTHONPATH}:${PWD}
 
-ENV PORT 3366
+ENV PORT 5143
 
 RUN npm install -g serve
 
@@ -16,4 +16,4 @@ RUN npm install
 # Build the React app
 RUN npm run build
 
-CMD ["serve", "-s", "-l", "5144", "./build"]
+CMD ["serve", "-s", "-l", "5143", "./build"]
