@@ -17,7 +17,7 @@ const ComponentPopularFeature =   () => {
         const fetchProduct = await axios.get("https://backend-node-product-505177410747.asia-southeast1.run.app/api/get/product")
         for(let i = 0; i < fetchProduct.data.length; i++){
             if(fetchProduct.data[i].rate === 5){
-                if(i > 6){
+                if(i > 5){
                     break
                 }
                 arrayPopular.push(fetchProduct.data[i])

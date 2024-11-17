@@ -242,7 +242,7 @@ const ContactPage = () => {
                     }
                 </div>
             </div>
-            <div className='mt-20'>
+            <div className=''>
                 <ComponentBottonBar />
             </div>
         </>
