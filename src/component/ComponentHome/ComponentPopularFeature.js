@@ -33,7 +33,7 @@ const ComponentPopularFeature =   () => {
     }, []);
 
     return (
-        <div className="max-[100%] mx-auto mt-12 ">
+        <div className="max-[100%] mx-auto mt-12 mb-[70px]">
             <div className="text-center">
                 <div className="text-gray-500 text-lg">Feature</div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Popular Destinations</h2>
@@ -43,7 +43,7 @@ const ComponentPopularFeature =   () => {
                     loading === true? <ComponentCardLoading/> : ""
                 }
                 {isPopData.map((el, idx) => (
-                    <div key={idx} className="group w-[85%] m-auto lg:w-[450px]  lg:ml-5 lg:mr-5">
+                    <div key={idx} className="group w-[85%] m-auto lg:w-[300px] mt-10 lg:ml-5 lg:mr-5">
                         <Link
                             to={{
                                 pathname: `product/:${el.title}`,

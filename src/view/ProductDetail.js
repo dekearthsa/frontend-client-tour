@@ -65,7 +65,7 @@ const ProductDetail = () => {
                             </div> : <div className=""></div>
                         }
 
-                        <div className="mt-[30px]  grid grid-cols-2  gap-1">
+                        <div className="mt-[30px] grid grid-cols-2  gap-1">
                             <div className=''>
                                 {
                                     images.map((el, idx) => {
@@ -76,7 +76,7 @@ const ProductDetail = () => {
                                                         haddlePopup();
                                                     }}
                                                     key={idx}
-                                                    className="mb-1 h-[260px]  lg:h-[350px] overflow-hidden rounded-md lg:rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+                                                    className="mb-1 h-[260px] lg:h-[350px] overflow-hidden rounded-md lg:rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
                                                 >
                                                     <img
                                                         className="w-full h-full object-cover"
