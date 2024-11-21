@@ -12,7 +12,7 @@ const ComponentCardShop = ({ region, title, intro, pricePerPerson, province, con
                 )}&rate=${encodeURIComponent(rate)}&ord=${encodeURIComponent(ord)}&static_id=${encodeURIComponent(static_id)}`,
             }}
         >
-            <div className="group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div className="group ] bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
                 <div className="relative h-48 bg-gray-200 overflow-hidden">
                     <img
                         src={JSON.parse(images)[0]}
@@ -25,7 +25,11 @@ const ComponentCardShop = ({ region, title, intro, pricePerPerson, province, con
                 </div>
                 <div className="p-4">
                     <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-                    <p className="mt-2 text-gray-600">{intro}</p>
+                    <div className='h-[60px]  break-words overflow-auto'>
+                        <p className='mt-2 text-gray-600'
+                            dangerouslySetInnerHTML={{ __html:intro }}
+                        ></p>
+                    </div>
                     <div className="mt-4">
                         <div className="text-sm text-gray-500">Price starts from:</div>
                         <div className="text-lg font-bold text-indigo-600">฿{JSON.parse(pricePerPerson)[0].price}</div>

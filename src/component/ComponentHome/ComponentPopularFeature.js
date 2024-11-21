@@ -12,12 +12,14 @@ const ComponentPopularFeature =   () => {
     const [isPopData, setIsPopData] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
+
     const haddleGetDataPopular = async () => {
         let arrayPopular = []
         const fetchProduct = await axios.get("https://backend-node-product-505177410747.asia-southeast1.run.app/api/get/product")
         for(let i = 0; i < fetchProduct.data.length; i++){
-            if(fetchProduct.data[i].rate === 5){
-                if(i > 5){
+            if(fetchProduct.data[i].ord === 5){
+                if(arrayPopular.length > 4){
                     break
                 }
                 arrayPopular.push(fetchProduct.data[i])
@@ -33,7 +35,7 @@ const ComponentPopularFeature =   () => {
     }, []);
 
     return (
-        <div className="max-[100%] mx-auto mt-12 mb-[70px]">
+        <div className="max-[100%]  mx-auto mt-12 mb-[60px]">
             <div className="text-center">
                 <div className="text-gray-500 text-lg">Feature</div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Popular Destinations</h2>
@@ -43,7 +45,7 @@ const ComponentPopularFeature =   () => {
                     loading === true? <ComponentCardLoading/> : ""
                 }
                 {isPopData.map((el, idx) => (
-                    <div key={idx} className="group w-[85%] m-auto lg:w-[300px] mt-10 lg:ml-5 lg:mr-5">
+                    <div key={idx} className="group w-[85%] m-auto lg:w-[450px]  lg:ml-5 lg:mr-5">
                         <Link
                             to={{
                                 pathname: `product/:${el.title}`,
@@ -68,7 +70,11 @@ const ComponentPopularFeature =   () => {
                                 />
                                 <div className="p-4">
                                     <h3 className="text-xl font-semibold text-gray-800 truncate">{el.title}</h3>
-                                    <p className="text-gray-500 mt-2">{el.intro.slice(0,33)}...</p>
+                                    <p className="text-gray-500 mt-2 w-[250px] h-[65px] break-words overflow-auto"
+                                        dangerouslySetInnerHTML={{__html:el.intro}}
+                                    >
+                                        {/* {el.intro} */}
+                                    </p>
                                     <div className="flex items-center justify-between mt-4">
                                         <span className="text-lg font-bold text-indigo-600">From ฿{JSON.parse(el.pricePerPerson)[0].price}</span>
                                         <span className="bg-indigo-500 text-white px-3 py-1 rounded-full">{el.rate} ★</span>
