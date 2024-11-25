@@ -6,6 +6,28 @@ import ComponentStarToprate from '../component/ComponentHome/ComponentStarToprat
 import ComponentProductDetailPopup from "../component/ComponentShop/ComponentProductDetailPopup";
 
 const ProductDetail = () => {
+    const haddleOrderByASC = (data) => {
+        let arrayDate = []
+        let arrayContentASC = []
+        const rangeArray = data.length
+        for(let i  = 0; i < rangeArray; i++){
+            arrayDate.push(Number(data[i].day))
+        }
+
+        const arrayASC = arrayDate.sort();
+        // console.log("arrayASC => ",arrayASC)
+        for(let i = 0; i < rangeArray; i++){
+            for(let j = 0; j < rangeArray; j++){
+                if( arrayASC[i] === Number(data[j].day)){
+                    // console.log(" => ",data[j].day)
+                    arrayContentASC.push(data[j])
+                    break
+                }
+            }
+        }
+        // console.log("arrayContentASC => ", arrayContentASC)
+        return arrayContentASC
+    }
     const [countImage, setCountImage] = useState();
     const [isPopup, setPopup] = useState(false);
     const [imageIdx, setImageIdx] = useState();
@@ -18,8 +40,10 @@ const ProductDetail = () => {
     const intro = searchParams.get("intro");
     const setPricePrice = searchParams.get("price");
     const setPriceJSON = JSON.parse(setPricePrice);
+    
     const content = searchParams.get("content");
     const setContentJSON = JSON.parse(content);
+    const ascJSONContent = haddleOrderByASC(setContentJSON);
 
     const haddlePopup = () => {
         if (!isPopup) {
@@ -190,7 +214,7 @@ const ProductDetail = () => {
                                     <span className="ml-4 text-[20px] md:text-[25px]">Activities</span>
                                 </h2>
                                 <div className="space-y-6">
-                                    {setContentJSON.map((el, idx) => (
+                                    {ascJSONContent.map((el, idx) => (
                                         <div key={idx} className="bg-gray-50 border border-gray-300 rounded-lg p-4 shadow-sm">
                                             <h3 className="text-[14px] md:text-[25px] font-semibold text-gray-800">DAY {el.day}</h3>
                                             <img className='mt-5 object-fill rounded-lg w-[260px] h-[150px] lg:w-[550px] lg:h-[310px]' src={el.image} />
