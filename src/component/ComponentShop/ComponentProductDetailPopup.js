@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const ComponentProductDetailPopup = ({images}) => {
+const ComponentProductDetailPopup = ({images, idx}) => {
     const slides = images;
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(idx);
 
     const goToNextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);

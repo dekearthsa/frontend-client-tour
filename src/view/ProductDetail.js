@@ -8,6 +8,7 @@ import ComponentProductDetailPopup from "../component/ComponentShop/ComponentPro
 const ProductDetail = () => {
     const [countImage, setCountImage] = useState();
     const [isPopup, setPopup] = useState(false);
+    const [imageIdx, setImageIdx] = useState();
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -61,7 +62,7 @@ const ProductDetail = () => {
                                     >X</button>
                                 </div>
 
-                                <ComponentProductDetailPopup images={images} />
+                                <ComponentProductDetailPopup images={images} idx={imageIdx}/>
                             </div> : <div className=""></div>
                         }
 
@@ -73,6 +74,7 @@ const ProductDetail = () => {
                                             return (
                                                 <div
                                                     onClick={() => {
+                                                        setImageIdx(idx)
                                                         haddlePopup();
                                                     }}
                                                     key={idx}
@@ -97,6 +99,7 @@ const ProductDetail = () => {
                                             return (
                                                 <div
                                                     onClick={() => {
+                                                        setImageIdx(idx)
                                                         haddlePopup();
                                                     }}
                                                     key={idx}
@@ -113,6 +116,7 @@ const ProductDetail = () => {
                                             return (
                                                 <div
                                                     onClick={() => {
+                                                        setImageIdx(idx)
                                                         haddlePopup();
                                                     }}
                                                     key={idx}
