@@ -136,9 +136,9 @@ const AboutPage = () => {
                                     {isGetInTouch}
                                 </div>
                             </h2>
-                            <p className="fade-in mt-[100px] duration-2000 ease-out transform transition-all text-lg md:text-xl text-gray-300 lg:mb-12 text-center">
-                                <div>{isIntro}</div>
-                            </p>
+                            <div className="fade-in mt-[100px] duration-2000 ease-out transform transition-all text-lg md:text-xl text-gray-300 lg:mb-12 text-center">
+                                <p>{isIntro}</p>
+                            </div>
 
                             {/* CoverFlowCarousel Component */}
                             

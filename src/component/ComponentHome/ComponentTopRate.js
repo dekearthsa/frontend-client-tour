@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import  ComponentCardLoading  from '../ComponentAnimationLoading/ComponentCardLoading';
+import DOMPurify from 'dompurify';
 
 // import axios from "axios"
 // import ComponentStarToprate from "./ComponentStarToprate";
@@ -11,6 +12,10 @@ const ComponentTopRate = () => {
     const [isPopData, setIsPopData] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const haddleDOMPurifyIntro = (innerHTMLData) => {
+        const sanitizedInput = DOMPurify.sanitize(innerHTMLData);
+        return <p className="text-gray-500 mt-2 w-[250px] h-[65px] break-words overflow-auto" dangerouslySetInnerHTML={{__html:sanitizedInput}}></p>
+    }
 
     // const funcRandomPopular = (data) => {
     //     const lengthData = data.length;
@@ -93,11 +98,8 @@ const ComponentTopRate = () => {
                                         </svg>
                                     ))}
                                 </div>
-                                <h3 className="text-[22px] md:text-[24px] font-bold mb-1">{el.title}</h3>
-                                <p className="text-gray-500 mt-2 w-[250px] h-[65px] break-words overflow-auto"
-                                    dangerouslySetInnerHTML={{__html:el.intro}}
-                                >
-                                </p>
+                                <h3 className="text-[20px] md:text-[20px] font-bold mb-1">{el.title}</h3>
+                                {haddleDOMPurifyIntro(el.intro)}
                                 <p className="text-gray-500 text-[16px]">Starting from:</p>
                                 <p className="text-gray-800 text-[24px] font-bold">฿{JSON.parse(el.pricePerPerson)[0]['price']}</p>
                             </div>

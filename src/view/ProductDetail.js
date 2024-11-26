@@ -4,8 +4,19 @@ import ComponentHomeNavbar from '../component/ComponentHome/ComponentHomeNavbar'
 import ComponentBottonBar from '../component/ComponentHome/ComponentBottonBar';
 import ComponentStarToprate from '../component/ComponentHome/ComponentStarToprate';
 import ComponentProductDetailPopup from "../component/ComponentShop/ComponentProductDetailPopup";
+import DOMPurify from 'dompurify';
 
 const ProductDetail = () => {
+
+    const haddleDOMPurifyIntro = (innerHTMLData) => {
+        const sanitizedInput = DOMPurify.sanitize(innerHTMLData);
+        return <div  className=" text-[14px] md:text-[19px]  text-gray-600 leading-relaxed break-words p-4 md:p-6" dangerouslySetInnerHTML={{__html:sanitizedInput}}></div>
+    }
+
+    const haddleDOMPurifyContent = (innerHTMLData) => {
+        const sanitizedInput = DOMPurify.sanitize(innerHTMLData);
+        return  <p className="text-[14px] md:text-[20px] text-gray-600 mt-10" dangerouslySetInnerHTML={{__html:sanitizedInput}}></p>
+    }
     const haddleOrderByASC = (data) => {
         let arrayDate = []
         let arrayContentASC = []
@@ -183,9 +194,7 @@ const ProductDetail = () => {
                                     </svg>
                                     <span className="ml-4 text-[20px] md:text-[25px]">Introduction</span>
                                 </h2>
-                                <div className=" text-[14px] md:text-[19px]  text-gray-600 leading-relaxed break-words p-4 md:p-6">
-                                    {intro}
-                                </div>
+                                {haddleDOMPurifyIntro(intro)}
                             </div>
 
                             <div className="mt-10">
@@ -218,7 +227,7 @@ const ProductDetail = () => {
                                         <div key={idx} className="bg-gray-50 border border-gray-300 rounded-lg p-4 shadow-sm">
                                             <h3 className="text-[14px] md:text-[25px] font-semibold text-gray-800">DAY {el.day}</h3>
                                             <img className='mt-5 object-fill rounded-lg w-[260px] h-[150px] lg:w-[550px] lg:h-[310px]' src={el.image} />
-                                            <p className="text-[14px] md:text-[20px] text-gray-600 mt-10">{el.content}</p>
+                                            {haddleDOMPurifyContent(el.content)}
                                         </div>
                                     ))}
                                 </div>

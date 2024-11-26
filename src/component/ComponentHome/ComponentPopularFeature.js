@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from "axios"
 // import ComponentLoading from '../ComponentAnimationLoading/ComponentLoading'
 import  ComponentCardLoading  from '../ComponentAnimationLoading/ComponentCardLoading';
-
+import DOMPurify from 'dompurify';
 
 
 const ComponentPopularFeature =   () => {
@@ -12,7 +12,10 @@ const ComponentPopularFeature =   () => {
     const [isPopData, setIsPopData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-
+    const haddleDOMPurifyIntro = (innerHTMLData) => {
+        const sanitizedInput = DOMPurify.sanitize(innerHTMLData)
+        return <p className="text-gray-500 mt-2 w-[250px] h-[65px] break-words overflow-auto" dangerouslySetInnerHTML={{__html:sanitizedInput}}></p>
+    }
 
     const haddleGetDataPopular = async () => {
         let arrayPopular = []
@@ -70,11 +73,7 @@ const ComponentPopularFeature =   () => {
                                 />
                                 <div className="p-4">
                                     <h3 className="text-xl font-semibold text-gray-800 truncate">{el.title}</h3>
-                                    <p className="text-gray-500 mt-2 w-[250px] h-[65px] break-words overflow-auto"
-                                        dangerouslySetInnerHTML={{__html:el.intro}}
-                                    >
-                                        {/* {el.intro} */}
-                                    </p>
+                                    {haddleDOMPurifyIntro(el.intro)}
                                     <div className="flex items-center justify-between mt-4">
                                         <span className="text-lg font-bold text-indigo-600">From ฿{JSON.parse(el.pricePerPerson)[0].price}</span>
                                         <span className="bg-indigo-500 text-white px-3 py-1 rounded-full">{el.rate} ★</span>
