@@ -164,7 +164,6 @@ const ComponentFindBar = () => {
     }
 
     const funcInit = async () => {
-        
         await funcFetchListRegion();
     }
 
